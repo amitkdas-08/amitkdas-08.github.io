@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css"><title>Amit Kumar Das — Visualization & Human-Centered AI Researcher</title>
+<style>
+.home-news-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:22px 0;max-height:220px;overflow-y:auto}
+.home-news-box::-webkit-scrollbar{width:6px}
+.home-news-box::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.home-news-title{font-family:var(--font-display);font-size:1.05rem;color:var(--dark);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline}
+.home-news-title a{font-family:var(--font-body);font-size:.78rem;font-weight:500}
+.home-news-item{display:grid;grid-template-columns:80px 1fr;gap:10px;padding:8px 0;font-size:.83rem;line-height:1.55;border-bottom:1px dashed var(--border)}
+.home-news-item:last-child{border-bottom:none}
+.home-news-item .date{font-family:var(--font-mono);font-size:.72rem;color:var(--text-light);font-weight:500}
+.home-news-item span:last-child{text-align:justify}
+.hero-tagline,.hero-affil{text-align:justify}
+.hl-nlp{color:#0891B2;font-weight:600}
+.hl-vis{color:#7C3AED;font-weight:600}
+.hl-hci{color:#D97706;font-weight:600}
+.hl-llm{color:#059669;font-weight:600}
+.hl-ml{color:#DC2626;font-weight:600}
+</style>
+</head><body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-brand">Amit</a><ul class="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards & Talks</a></li><li><a href="news.html">News</a></li><li><a href="cv.html">CV</a></li></ul><button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
+
+<header class="hero">
+<div class="hero-inner">
+<div class="hero-photo fade-in"><div class="photo-frame"><img src="img/profile.png" alt="Amit Kumar Das"></div></div>
+<div class="hero-content">
+<h1 class="fade-in">Amit Kumar Das</h1>
+<p class="hero-tagline fade-in d1">Ph.D. Candidate in Computer Science</p>
+<p class="hero-affil fade-in d2"><a href="https://www.cs.stonybrook.edu/" target="_blank">Stony Brook University</a> · Advised by <a href="https://www3.cs.stonybrook.edu/~mueller/" target="_blank">Dr. Klaus Mueller</a></p>
+<div class="hero-contact fade-in d2">
+<a href="mailto:amidas@cs.stonybrook.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>amidas@cs.stonybrook.edu</a>
+<a href="tel:631-512-3810"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.67 2.36a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.72-1.24a2 2 0 012.11-.45c.76.31 1.55.54 2.36.67A2 2 0 0122 16.92z"/></svg>631-512-3810</a>
+<a href="https://www.linkedin.com/in/amit-kumar-das-191ba51b/" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77A1.75 1.75 0 000 1.73v20.54A1.75 1.75 0 001.77 24h20.45A1.76 1.76 0 0024 22.27V1.73A1.76 1.76 0 0022.22 0z"/></svg>LinkedIn</a>
+<a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-2a5 5 0 100-10 5 5 0 000 10z"/><path d="M0 9.5l12-7 12 7-12 7z"/></svg>Scholar</a>
+</div>
+
+<!-- BIO -->
+<div class="hero-bio fade-in d3">
+<p>Hello! I am a Ph.D. candidate in <a href="https://www.cs.stonybrook.edu/" target="_blank">Computer Science</a> at <a href="https://www.stonybrook.edu/" target="_blank">Stony Brook University</a>, where I am fortunate to be advised by <a href="https://www3.cs.stonybrook.edu/~mueller/" target="_blank">Prof. Klaus Mueller</a>. I am also a <a href="https://www.stonybrook.edu/commcms/bias-nrt/" target="_blank">NSF BIAS-NRT Fellow</a>. My research centers on <span class="hl-nlp">Natural Language Processing</span>, <span class="hl-llm">Large Language Models</span>, <span class="hl-vis">Data Visualization</span>, <span class="hl-hci">Human-AI Interaction</span>, <span class="hl-ml">Machine Learning</span>, and <span class="hl-ml">Artificial Intelligence</span>.</p>
+<p>Previously, I was a Senior Lecturer in the <a href="https://www.ewubd.edu/" target="_blank">Department of Computer Science and Engineering</a> at <a href="https://www.ewubd.edu/" target="_blank">East West University</a>, Bangladesh, where I taught courses in Machine Learning, Artificial Intelligence, Algorithms, Data Structures, and others, and mentored 150+ student researchers. Before that, I worked as a Specialist in Digital Services at <a href="https://www.robi.com.bd/en" target="_blank">Robi Axiata Limited</a>, Bangladesh (2015–2016). I was also the principal investigator of national and international research projects funded by the <a href="https://ictd.gov.bd/" target="_blank">Information and Communication Technology Division (ICTD)</a>, Government of Bangladesh, and the <a href="https://apnic.foundation/projects/isif-asia/" target="_blank">Information Society Innovation Fund (ISIF) Asia</a>.</p>
+<p>I earned my M.Sc. (2015) and B.Sc. (2013) in Computer Science and Engineering from the <a href="https://www.du.ac.bd/body/CSE" target="_blank">Department of Computer Science and Engineering</a>, <a href="https://www.du.ac.bd/" target="_blank">University of Dhaka</a>, Bangladesh, where I was fortunate to work with the Green Networking Research (GNR) Lab under <a href="https://www.du.ac.bd/faculty/faculty_details/CSE/1768#" target="_blank">Professor Dr. Md. Abdur Razzaque</a>. My research during that time spanned Cloud Computing, IoT, Green Cellular Networks, Sensor Networks, and Mobile Cloud Computing.</p>
+</div>
+
+<!-- RECENT NEWS -->
+<div class="home-news-box fade-in d3">
+<div class="home-news-title"><span>📰 Recent News</span><a href="news.html">All news →</a></div>
+<div class="home-news-item"><span class="date">Feb 2026</span><span>📄 Two papers accepted at <strong>CHI 2026 Extended Abstracts</strong>: "Making Charts Speak" and "Every Persona Has Its Palette."</span></div>
+<div class="home-news-item"><span class="date">Jan 2026</span><span>🏅 Received <strong>Special Recognition for Outstanding Reviews</strong> at <strong>CHI 2026</strong>.</span></div>
+<div class="home-news-item"><span class="date">Dec 2025</span><span>🏅 Received <strong>Special Recognition for Outstanding Reviews</strong> at <strong>IUI 2026</strong>.</span></div>
+<div class="home-news-item"><span class="date">Dec 2025</span><span>🎤 Delivered a guest lecture on <strong>MisVisFix</strong> at <a href="https://www.oldwestbury.edu/" target="_blank"><strong>SUNY Old Westbury</strong></a>.</span></div>
+<div class="home-news-item"><span class="date">Nov 2025</span><span>🎤 Presented <a href="https://ieeexplore.ieee.org/document/11269882" target="_blank"><strong>"Charts-of-Thought"</strong></a> at <strong>IEEE VIS 2025</strong>, Vienna, Austria.</span></div>
+<div class="home-news-item"><span class="date">Nov 2025</span><span>🎤 Presented <a href="https://ieeexplore.ieee.org/document/11269882" target="_blank"><strong>"MisVisFix"</strong></a> at <strong>IEEE VIS 2025</strong>, Vienna, Austria.</span></div>
+<div class="home-news-item"><span class="date">Jul 2025</span><span>🏆 Two papers accepted at <strong>IEEE VIS 2025</strong> (23% acceptance rate): <a href="https://arxiv.org/abs/2508.04842" target="_blank">Charts-of-Thought</a> and <a href="https://arxiv.org/abs/2508.04679" target="_blank">MisVisFix</a>.</span></div>
+<div class="home-news-item"><span class="date">Apr 2025</span><span>🎤 Presented <a href="https://dl.acm.org/doi/10.1145/3706599.3720018" target="_blank"><strong>"Leveraging LLMs for Personalized Public Messaging"</strong></a> at <strong>CHI 2025</strong>, Yokohama, Japan.</span></div>
+<div class="home-news-item"><span class="date">Feb 2025</span><span>📄 Paper accepted at <strong>CHI 2025 Extended Abstracts</strong>: "Leveraging LLMs for Personalized Public Messaging."</span></div>
+<div class="home-news-item"><span class="date">Aug 2024</span><span>🎓 Awarded the <strong>NSF BIAS-NRT Research Traineeship Fellowship</strong>.</span></div>
+<div class="home-news-item"><span class="date">Jul 2024</span><span>🎉 Passed RPE — officially a <strong>Ph.D. Candidate</strong>, CS Department, Stony Brook University.</span></div>
+</div>
+
+<div class="research-tags fade-in d4">
+<span class="tag">NLP</span><span class="tag">LLMs</span><span class="tag">Machine Learning</span><span class="tag">Artificial Intelligence</span><span class="tag">Human-AI Interaction</span><span class="tag">Data Visualization</span><span class="tag">AI for Accessibility</span><span class="tag">Intelligent User Interfaces</span><span class="tag">Information Retrieval</span><span class="tag">Explainable AI</span>
+</div>
+</div></div></header>
+
+<footer class="footer"><div class="footer-inner"><ul class="footer-links"><li><a href="mailto:amidas@cs.stonybrook.edu">Email</a></li><li><a href="https://www.linkedin.com/in/amit-kumar-das-191ba51b/" target="_blank">LinkedIn</a></li><li><a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank">Google Scholar</a></li></ul><p>&copy; 2026 Amit Kumar Das. All rights reserved.</p></div></footer>
+<script src="js/main.js"></script>
+</body></html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css"><title>Publications — Amit Kumar Das</title>
+<style>
+.pub-number{display:inline-block;min-width:32px;font-family:var(--font-mono);font-size:.8rem;color:var(--text-light);font-weight:600;vertical-align:top;padding-top:2px}
+.pub-venue-tag{font-family:var(--font-mono);font-size:.68rem;font-weight:700;color:var(--accent-dark);background:var(--accent-light);padding:3px 9px;border-radius:4px;display:inline-block;margin-bottom:7px;text-transform:uppercase;letter-spacing:.03em}
+.pub-venue-tag.underreview{background:var(--warm-light);color:#92400E}
+.pub-venue-tag.journal{background:#DBEAFE;color:#1E40AF}
+.pub-item{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--border)}
+.pub-item:last-child{border-bottom:none}
+.pub-content{flex:1;min-width:0}
+.pub-content .pub-title{font-size:.93rem;font-weight:600;color:var(--dark);line-height:1.5;margin-bottom:4px}
+.pub-content .pub-title a{color:var(--dark)}
+.pub-content .pub-title a:hover{color:var(--accent)}
+.pub-content .pub-authors{font-size:.82rem;color:var(--text-light);margin-bottom:3px;line-height:1.5}
+.pub-content .pub-authors .me{font-weight:700;color:var(--accent-dark);font-style:italic}
+.pub-content .pub-venue{font-size:.79rem;color:var(--text-light);font-style:italic;margin-bottom:7px;line-height:1.5}
+.pub-action-links{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px;align-items:center}
+.pub-action{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.71rem;font-weight:600;background:transparent;color:var(--text);border:1px solid var(--border);cursor:pointer;transition:all var(--tr);font-family:var(--font-body);text-decoration:none}
+.pub-action:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.pub-action.btn-link{cursor:pointer}
+.pub-action.scholar-badge{background:#4285F4;color:#fff;border-color:#4285F4}
+.pub-action.scholar-badge:hover{background:#3367D6;border-color:#3367D6;color:#fff}
+.pub-abstract,.pub-bib{display:none;margin-top:9px;padding:10px 12px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:.8rem;line-height:1.65;color:var(--text)}
+.pub-abstract.show,.pub-bib.show{display:block}
+.pub-bib{font-family:var(--font-mono);font-size:.73rem;white-space:pre-wrap;overflow-x:auto;border-left-color:var(--warm)}
+.pub-year-group .pub-year-label{font-family:var(--font-display);font-size:1.35rem;color:var(--dark);margin:26px 0 10px;padding-bottom:7px;border-bottom:2px solid var(--border)}
+</style>
+</head><body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-brand">Amit</a><ul class="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards & Talks</a></li><li><a href="news.html">News</a></li><li><a href="cv.html">CV</a></li></ul><button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
+<header class="page-header"><div class="page-header-inner"><h1 class="fade-in">Publications</h1><p class="fade-in d1">62 accepted papers &middot; 2,246 citations &middot; h-index: 28 &middot; i10-index: 42 (as of April 2026, <a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank">Google Scholar</a>)</p></div></header>
+<section class="section" style="padding-top:10px;">
+<div class="pub-filters fade-in d1">
+<div class="filter-group"><button class="filter-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Year</button><div class="filter-dropdown"><button class="filter-option" onclick="addFilter('year','2026')">2026</button><button class="filter-option" onclick="addFilter('year','2025')">2025</button><button class="filter-option" onclick="addFilter('year','2023')">2023</button><button class="filter-option" onclick="addFilter('year','2022')">2022</button><button class="filter-option" onclick="addFilter('year','2021')">2021</button><button class="filter-option" onclick="addFilter('year','2020')">2020</button><button class="filter-option" onclick="addFilter('year','2019')">2019</button><button class="filter-option" onclick="addFilter('year','2017')">2017</button><button class="filter-option" onclick="addFilter('year','2016')">2016</button><button class="filter-option" onclick="addFilter('year','2015')">2015</button><button class="filter-option" onclick="addFilter('year','2014')">2014</button><button class="filter-option" onclick="addFilter('year','2013')">2013</button><button class="filter-option" onclick="addFilter('year','2012')">2012</button></div></div>
+<div class="filter-group"><button class="filter-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Type</button><div class="filter-dropdown"><button class="filter-option" onclick="addFilter('venuetype','journal')">Journal</button><button class="filter-option" onclick="addFilter('venuetype','conference')">Conference</button></div></div>
+<div class="filter-group"><button class="filter-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Status</button><div class="filter-dropdown"><button class="filter-option" onclick="addFilter('status','published')">Published</button><button class="filter-option" onclick="addFilter('status','under-review')">Under Review</button></div></div>
+<div class="filter-group"><button class="filter-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Topic</button><div class="filter-dropdown"><button class="filter-option" onclick="addFilter('topic','LLM/NLP')">LLMs / NLP</button><button class="filter-option" onclick="addFilter('topic','Visualization')">Visualization</button><button class="filter-option" onclick="addFilter('topic','Accessibility')">Accessibility</button><button class="filter-option" onclick="addFilter('topic','Cloud/IoT')">Cloud/IoT</button><button class="filter-option" onclick="addFilter('topic','ML')">Machine Learning</button></div></div>
+<button class="filter-btn" onclick="clearAllFilters()" style="color:var(--coral);border-color:transparent;">Clear All</button>
+</div>
+<div class="active-filters"></div>
+
+<!-- ============================================================ -->
+<!-- UNDER REVIEW (Separate numbering: 1–5)                        -->
+<!-- ============================================================ -->
+<div class="pub-year-group"><h3 class="pub-year-label">Under Review</h3>
+
+<div class="pub-item" data-year="2026" data-venuetype="conference" data-status="under-review" data-topic="Visualization"><span class="pub-number">5.</span><div class="pub-content"><span class="pub-venue-tag underreview">IEEE VIS 2026</span><h3 class="pub-title">Data2VizWiz: An Interactive System for LLM Based Chart Recommendation Beyond Default Charts</h3><p class="pub-authors"><span class="me">A. K. Das</span>, K. Mueller</p><p class="pub-venue">Submitted to IEEE VIS 2026 &middot; Under Review</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Data2VizWiz+Interactive+System+LLM+Chart+Recommendation%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An interactive system leveraging large language models for chart recommendation that goes beyond default chart types, helping users discover more effective visualizations for their data.</div><div class="pub-bib">@article{das2026data2vizwiz,
+  title={Data2VizWiz: An Interactive System for LLM Based Chart Recommendation Beyond Default Charts},
+  author={Das, Amit Kumar and Mueller, Klaus},
+  journal={Submitted to IEEE VIS 2026},
+  year={2026}
+}</div></div></div>
+
+<div class="pub-item" data-year="2026" data-venuetype="conference" data-status="under-review" data-topic="Visualization"><span class="pub-number">4.</span><div class="pub-content"><span class="pub-venue-tag underreview">EuroVis 2026</span><h3 class="pub-title">Interpreting Latent Variables in Causal DAGs: A Study of Non Expert Understanding</h3><p class="pub-authors"><span class="me">A. K. Das</span>, K. Mueller</p><p class="pub-venue">Submitted to EuroVis 2026 &middot; Under Review</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Interpreting+Latent+Variables+Causal+DAGs+Non+Expert%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A study investigating how non-experts interpret latent variables in causal directed acyclic graphs (DAGs), providing insights for designing more accessible causal reasoning interfaces.</div><div class="pub-bib">@article{das2026latent,
+  title={Interpreting Latent Variables in Causal DAGs: A Study of Non Expert Understanding},
+  author={Das, Amit Kumar and Mueller, Klaus},
+  journal={Submitted to EuroVis 2026},
+  year={2026}
+}</div></div></div>
+
+<div class="pub-item" data-year="2026" data-venuetype="journal" data-status="under-review" data-topic="Accessibility"><span class="pub-number">3.</span><div class="pub-content"><span class="pub-venue-tag underreview">IEEE TVCG</span><h3 class="pub-title">GraphWhisper: LLM Based Conversational Chart Question Answering for Blind and Low Vision Users</h3><p class="pub-authors"><span class="me">A. K. Das</span>, K. Mueller</p><p class="pub-venue">Submitted to IEEE Transactions on Visualization &amp; Computer Graphics (TVCG) &middot; Under Review</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22GraphWhisper+LLM+Conversational+Chart+Question+Answering%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A conversational AI system that enables blind and low-vision users to explore data visualizations through natural language dialogue, leveraging large language models for chart question answering.</div><div class="pub-bib">@article{das2026graphwhisper,
+  title={GraphWhisper: LLM Based Conversational Chart Question Answering for Blind and Low Vision Users},
+  author={Das, Amit Kumar and Mueller, Klaus},
+  journal={Submitted to IEEE TVCG},
+  year={2026}
+}</div></div></div>
+
+<div class="pub-item" data-year="2026" data-venuetype="journal" data-status="under-review" data-topic="LLM/NLP"><span class="pub-number">2.</span><div class="pub-content"><span class="pub-venue-tag underreview">ACM TOCHI</span><h3 class="pub-title">Can LLM Understand Personal Perspectives? Leveraging Large Language Models for Personalized Public Messaging</h3><p class="pub-authors"><span class="me">A. K. Das</span>, C. X. Bearfield, K. Mueller</p><p class="pub-venue">Submitted to ACM Transactions on Computer-Human Interaction (TOCHI) &middot; Under Review</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Can+LLM+Understand+Personal+Perspectives+Personalized+Public+Messaging%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A personalized AI framework combining large language models with conjoint analysis to model how individuals respond to public health messages. Validated with 2,040 participants, reducing survey cost by 99.18%.</div><div class="pub-bib">@article{das2026personalized,
+  title={Can LLM Understand Personal Perspectives? Leveraging Large Language Models for Personalized Public Messaging},
+  author={Das, Amit Kumar and Bearfield, C. X. and Mueller, Klaus},
+  journal={Submitted to ACM TOCHI},
+  year={2026}
+}</div></div></div>
+
+<div class="pub-item" data-year="2026" data-venuetype="journal" data-status="under-review" data-topic="Visualization"><span class="pub-number">1.</span><div class="pub-content"><span class="pub-venue-tag underreview">IEEE TVCG</span><h3 class="pub-title">VisNoob: An Interactive Dashboard to Assist Non-experts Understand and Fix Misleading Data Visualizations</h3><p class="pub-authors"><span class="me">A. K. Das</span>, K. Mueller</p><p class="pub-venue">Submitted to IEEE Transactions on Visualization &amp; Computer Graphics (TVCG) &middot; Under Review</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22VisNoob+Interactive+Dashboard+Misleading+Data+Visualizations%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An interactive dashboard that helps non-expert users identify, understand, and correct misleading data visualizations through guided explanations and automated fix suggestions.</div><div class="pub-bib">@article{das2026visnoob,
+  title={VisNoob: An Interactive Dashboard to Assist Non-experts Understand and Fix Misleading Data Visualizations},
+  author={Das, Amit Kumar and Mueller, Klaus},
+  journal={Submitted to IEEE TVCG},
+  year={2026}
+}</div></div></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ACCEPTED & PUBLISHED (Separate numbering: 1 = oldest, 62 = newest) -->
+<!-- ============================================================ -->
+
+<!-- 2026 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2026</h3>
+
+<div class="pub-item" data-year="2026" data-venuetype="conference" data-status="published" data-topic="Accessibility"><span class="pub-number">62.</span><div class="pub-content"><span class="pub-venue-tag">CHI EA'26</span><h3 class="pub-title">Making Charts Speak: LLM Based Conversational Chart Question Answering for Blind and Low Vision Users</h3><p class="pub-authors"><span class="me">A. K. Das</span>, K. Mueller</p><p class="pub-venue">CHI 2026 Extended Abstracts</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Making+Charts+Speak+LLM+Conversational+Chart+Question+Answering%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An LLM-based conversational system enabling blind and low-vision users to explore and understand data charts through natural language interaction.</div><div class="pub-bib">@inproceedings{das2026makingcharts,
+  title={Making Charts Speak: LLM Based Conversational Chart Question Answering for Blind and Low Vision Users},
+  author={Das, Amit Kumar and Mueller, Klaus},
+  booktitle={CHI 2026 Extended Abstracts},
+  year={2026}
+}</div></div></div>
+
+<div class="pub-item" data-year="2026" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">61.</span><div class="pub-content"><span class="pub-venue-tag">CHI EA'26</span><h3 class="pub-title">Every Persona Has Its Palette: Persona Based Color Highlighting for Emotional Expression in Text Chat</h3><p class="pub-authors"><span class="me">A. K. Das</span>, K. Mueller</p><p class="pub-venue">CHI 2026 Extended Abstracts</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Every+Persona+Has+Its+Palette+Color+Highlighting+Emotional+Expression%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A persona-based color highlighting framework for enhancing emotional expression in text chat by mapping personality traits to color palettes.</div><div class="pub-bib">@inproceedings{das2026persona,
+  title={Every Persona Has Its Palette: Persona Based Color Highlighting for Emotional Expression in Text Chat},
+  author={Das, Amit Kumar and Mueller, Klaus},
+  booktitle={CHI 2026 Extended Abstracts},
+  year={2026}
+}</div></div></div>
+</div>
+
+<!-- 2025 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2025</h3>
+
+<div class="pub-item" data-year="2025" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">60.</span><div class="pub-content"><span class="pub-venue-tag">IEEE VIS'25</span><h3 class="pub-title"><a href="https://arxiv.org/abs/2508.04842" target="_blank">Charts-of-Thought: Enhancing LLM Visualization Literacy Through Structured Data Extraction</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, M. Tarun, K. Mueller</p><p class="pub-venue">In Proceedings of the IEEE Visualization Conference (IEEE VIS), 2025. (Accepted)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://arxiv.org/abs/2508.04842" target="_blank">HTML</a><a class="pub-action" href="https://arxiv.org/pdf/2508.04842" target="_blank">PDF</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Charts-of-Thought+Enhancing+LLM+Visualization+Literacy%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A structured prompting framework that improves LLM reasoning about visual information by guiding models to extract and organize data from charts before answering questions. Improved accuracy from 28.82 (human baseline) to 50.17 on the VLAT benchmark.</div><div class="pub-bib">@inproceedings{das2025chartsofthought,
+  title={Charts-of-Thought: Enhancing LLM Visualization Literacy Through Structured Data Extraction},
+  author={Das, Amit Kumar and Tarun, M. and Mueller, Klaus},
+  booktitle={Proceedings of the IEEE Visualization Conference (IEEE VIS)},
+  year={2025}
+}</div></div></div>
+
+<div class="pub-item" data-year="2025" data-venuetype="conference" data-status="published" data-topic="Visualization"><span class="pub-number">59.</span><div class="pub-content"><span class="pub-venue-tag">IEEE VIS'25</span><h3 class="pub-title"><a href="https://arxiv.org/abs/2508.04679" target="_blank">MisVisFix: An Interactive Dashboard for Detecting, Explaining, and Correcting Misleading Visualizations using Large Language Models</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, K. Mueller</p><p class="pub-venue">In Proceedings of the IEEE Visualization Conference (IEEE VIS), 2025. (Accepted)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://arxiv.org/abs/2508.04679" target="_blank">HTML</a><a class="pub-action" href="https://arxiv.org/pdf/2508.04679" target="_blank">PDF</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22MisVisFix+Interactive+Dashboard+Detecting+Misleading+Visualizations%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An LLM-powered interactive dashboard for detecting, explaining, and correcting misleading data visualizations. Covers 74 artifact types with 96% detection accuracy.</div><div class="pub-bib">@inproceedings{das2025misvisfix,
+  title={MisVisFix: An Interactive Dashboard for Detecting, Explaining, and Correcting Misleading Visualizations using Large Language Models},
+  author={Das, Amit Kumar and Mueller, Klaus},
+  booktitle={Proceedings of the IEEE Visualization Conference (IEEE VIS)},
+  year={2025}
+}</div></div></div>
+
+<div class="pub-item" data-year="2025" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">58.</span><div class="pub-content"><span class="pub-venue-tag">CHI EA'25</span><h3 class="pub-title"><a href="https://doi.org/10.1145/3706599.3720018" target="_blank">Leveraging Large Language Models for Personalized Public Messaging</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, C. X. Bearfield, K. Mueller</p><p class="pub-venue">In Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA), 2025, pp. 1&ndash;7</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1145/3706599.3720018" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Leveraging+Large+Language+Models+for+Personalized+Public+Messaging%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Combining LLMs with conjoint analysis to model individual-level public health message preferences across different personality types.</div><div class="pub-bib">@inproceedings{das2025personalized,
+  title={Leveraging Large Language Models for Personalized Public Messaging},
+  author={Das, Amit Kumar and Bearfield, C. X. and Mueller, Klaus},
+  booktitle={Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA)},
+  pages={1--7},
+  year={2025},
+  doi={10.1145/3706599.3720018}
+}</div></div></div>
+</div>
+
+<!-- 2023 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2023</h3>
+
+<div class="pub-item" data-year="2023" data-venuetype="journal" data-status="published" data-topic="ML"><span class="pub-number">57.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S2666307423000025" target="_blank">Multi-class sentiment classification on Bengali social media comments using machine learning</a></h3><p class="pub-authors">R. Haque, N. Islam, M. Tasneem, <span class="me">A. K. Das</span></p><p class="pub-venue">International Journal of Cognitive Computing in Engineering, vol. 4, pp. 21&ndash;35, 2023 (Elsevier)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://www.sciencedirect.com/science/article/pii/S2666307423000025" target="_blank">HTML</a><a class="pub-action" href="https://www.sciencedirect.com/science/article/pii/S2666307423000025/pdfft" target="_blank">PDF</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Multi-class+sentiment+classification+Bengali+social+media%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A machine learning approach for multi-class sentiment classification on Bengali social media comments, comparing multiple classifiers for effective sentiment analysis.</div><div class="pub-bib">@article{haque2023multiclass,
+  title={Multi-class sentiment classification on Bengali social media comments using machine learning},
+  author={Haque, R. and Islam, N. and Tasneem, M. and Das, Amit Kumar},
+  journal={International Journal of Cognitive Computing in Engineering},
+  volume={4},
+  pages={21--35},
+  year={2023},
+  publisher={Elsevier}
+}</div></div></div>
+</div>
+
+<!-- 2022 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2022</h3>
+
+<div class="pub-item" data-year="2022" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">56.</span><div class="pub-content"><span class="pub-venue-tag">FTC'22</span><h3 class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-18461-1_10" target="_blank">CVD: An improved approach of software vulnerability detection for OOP languages using deep learning</a></h3><p class="pub-authors">S. Siddique, A. I. Hridoy, S. A. Khushbu, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the Future Technologies Conference, 2022, pp. 145&ndash;164</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://link.springer.com/chapter/10.1007/978-3-031-18461-1_10" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22CVD+improved+approach+software+vulnerability+detection%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An improved deep learning approach for detecting software vulnerabilities in object-oriented programming languages, leveraging code patterns and structural analysis.</div><div class="pub-bib">@inproceedings{siddique2022cvd,
+  title={CVD: An improved approach of software vulnerability detection for object oriented programming languages using deep learning},
+  author={Siddique, S. and Hridoy, A. I. and Khushbu, S. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the Future Technologies Conference},
+  pages={145--164},
+  year={2022},
+  publisher={Springer}
+}</div></div></div>
+
+<div class="pub-item" data-year="2022" data-venuetype="conference" data-status="published" data-topic="Accessibility"><span class="pub-number">55.</span><div class="pub-content"><span class="pub-venue-tag">IMCOM'22</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9721813" target="_blank">HELLO: An android-based mobile application for autism individuals to improve socio-communicational learnability in Bangladesh</a></h3><p class="pub-authors">I. J. Yra, M. H. Pranto, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 16th International Conference on Ubiquitous Information Management and Communication (IMCOM), 2022, pp. 1&ndash;7</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9721813" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22HELLO+android+mobile+application+autism+individuals%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An Android-based mobile application designed to help individuals with autism improve their socio-communicational skills through interactive learning modules tailored for the Bangladeshi context.</div><div class="pub-bib">@inproceedings{yra2022hello,
+  title={HELLO: An android-based mobile application for autism individuals to improve socio-communicational learnability in Bangladesh},
+  author={Yra, I. J. and Pranto, M. H. and Das, Amit Kumar},
+  booktitle={Proceedings of the 16th International Conference on Ubiquitous Information Management and Communication (IMCOM)},
+  pages={1--7},
+  year={2022}
+}</div></div></div>
+
+<div class="pub-item" data-year="2022" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">54.</span><div class="pub-content"><span class="pub-venue-tag">IMCOM'22</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9721634" target="_blank">Bangla handwritten character and digit recognition using deep convolutional neural network on augmented dataset and its applications</a></h3><p class="pub-authors">H. Huda, M. A. I. Fahad, M. Islam, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 16th International Conference on Ubiquitous Information Management and Communication (IMCOM), 2022, pp. 1&ndash;7</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9721634" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Bangla+handwritten+character+digit+recognition+deep+convolutional%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A deep convolutional neural network approach for recognizing Bangla handwritten characters and digits using data augmentation techniques to improve recognition accuracy.</div><div class="pub-bib">@inproceedings{huda2022bangla,
+  title={Bangla handwritten character and digit recognition using deep convolutional neural network on augmented dataset and its applications},
+  author={Huda, H. and Fahad, M. A. I. and Islam, M. and Das, Amit Kumar},
+  booktitle={Proceedings of the 16th International Conference on Ubiquitous Information Management and Communication (IMCOM)},
+  pages={1--7},
+  year={2022}
+}</div></div></div>
+
+<div class="pub-item" data-year="2022" data-venuetype="journal" data-status="published" data-topic="LLM/NLP"><span class="pub-number">53.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://www.igi-global.com/article/a-dynamic-strategy-for-classifying-sentiment-from-bengali-text-by-utilizing-word2vector-model/299919" target="_blank">A dynamic strategy for classifying sentiment from Bengali text by utilizing Word2vector model</a></h3><p class="pub-authors">M. Rahman, M. R. A. Talukder, L. A. Setu, <span class="me">A. K. Das</span></p><p class="pub-venue">Journal of Information Technology Research (JITR), vol. 15, no. 1, pp. 1&ndash;17, 2022 (IGI Global)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://www.igi-global.com/article/a-dynamic-strategy-for-classifying-sentiment-from-bengali-text-by-utilizing-word2vector-model/299919" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22dynamic+strategy+classifying+sentiment+Bengali+Word2vector%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A dynamic sentiment classification strategy for Bengali text leveraging Word2Vec word embeddings to capture semantic relationships and improve classification accuracy.</div><div class="pub-bib">@article{rahman2022dynamic,
+  title={A dynamic strategy for classifying sentiment from Bengali text by utilizing Word2vector model},
+  author={Rahman, M. and Talukder, M. R. A. and Setu, L. A. and Das, Amit Kumar},
+  journal={Journal of Information Technology Research (JITR)},
+  volume={15},
+  number={1},
+  pages={1--17},
+  year={2022},
+  publisher={IGI Global}
+}</div></div></div>
+</div>
+
+<!-- 2021 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2021</h3>
+
+<div class="pub-item" data-year="2021" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">52.</span><div class="pub-content"><span class="pub-venue-tag">ICICT'21</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9358778" target="_blank">State of the Art of ICT based Telemedicine and E-health Services in Bangladesh</a></h3><p class="pub-authors">M. Rahman, S. Das, M. Z. Tazim, M. Rana, R. A. Tuhin, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 6th International Conference on Inventive Computation Technologies (ICICT), 2021, pp. 1266&ndash;1272</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9358778" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22State+of+Art+ICT+Telemedicine+E-health+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A comprehensive review of ICT-based telemedicine and e-health service implementations in Bangladesh, analyzing current infrastructure, challenges, and future directions.</div><div class="pub-bib">@inproceedings{rahman2021telemedicine,
+  title={State of the Art of ICT based Telemedicine and E-health Services in Bangladesh},
+  author={Rahman, M. and Das, S. and Tazim, M. Z. and Rana, M. and Tuhin, R. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the 6th International Conference on Inventive Computation Technologies (ICICT)},
+  pages={1266--1272},
+  year={2021}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">51.</span><div class="pub-content"><span class="pub-venue-tag">ICICT'21</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9358694" target="_blank">CNN based Security issues of the Drivers of Ridesharing Services in Bangladesh</a></h3><p class="pub-authors">J. F. Sorna, M. M. U. Rashel, R. A. Tuhin, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 6th International Conference on Inventive Computation Technologies (ICICT), 2021, pp. 1273&ndash;1278</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9358694" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22CNN+Security+issues+Drivers+Ridesharing+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An investigation of security issues faced by ridesharing service drivers in Bangladesh using CNN-based analysis of reported incidents and patterns.</div><div class="pub-bib">@inproceedings{sorna2021cnn,
+  title={CNN based Security issues of the Drivers of Ridesharing Services in Bangladesh},
+  author={Sorna, J. F. and Rashel, M. M. U. and Tuhin, R. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the 6th International Conference on Inventive Computation Technologies (ICICT)},
+  pages={1273--1278},
+  year={2021}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">50.</span><div class="pub-content"><span class="pub-venue-tag">IMCOM'21</span><h3 class="pub-title"><a href="https://doi.org/10.1109/IMCOM51814.2021.9377410" target="_blank">Bangla handwritten word recognition system using convolutional neural network</a></h3><p class="pub-authors">M. T. Hossain, M. W. Hasan, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 15th International Conference on Ubiquitous Information Management and Communication (IMCOM), 2021, pp. 1&ndash;8</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1109/IMCOM51814.2021.9377410" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Bangla+handwritten+word+recognition+convolutional+neural+network%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A convolutional neural network based system for recognizing Bangla handwritten words, addressing the complexity of the Bengali script.</div><div class="pub-bib">@inproceedings{hossain2021bangla,
+  title={Bangla handwritten word recognition system using convolutional neural network},
+  author={Hossain, M. T. and Hasan, M. W. and Das, Amit Kumar},
+  booktitle={Proceedings of the 15th International Conference on Ubiquitous Information Management and Communication (IMCOM)},
+  pages={1--8},
+  year={2021}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">49.</span><div class="pub-content"><span class="pub-venue-tag">IMCOM'21</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9377389" target="_blank">Behavioral issues of children in terms of internet usages time in Bangladesh</a></h3><p class="pub-authors">N. Ahmad, T. Sharmin, J. Akter, R. A. Tuhin, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 15th International Conference on Ubiquitous Information Management and Communication (IMCOM), 2021, pp. 1&ndash;6</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9377389" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Behavioral+issues+children+internet+usages+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A study examining behavioral issues among children in Bangladesh related to internet usage time, analyzing patterns and recommending guidelines for healthy screen habits.</div><div class="pub-bib">@inproceedings{ahmad2021behavioral,
+  title={Behavioral issues of children in terms of internet usages time in Bangladesh},
+  author={Ahmad, N. and Sharmin, T. and Akter, J. and Tuhin, R. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the 15th International Conference on Ubiquitous Information Management and Communication (IMCOM)},
+  pages={1--6},
+  year={2021}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="journal" data-status="published" data-topic="ML"><span class="pub-number">48.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://pdfs.semanticscholar.org/932e/c33f4586310017db1bcbfc667a02049f4965.pdf" target="_blank">Predicting Retinal Diseases using Efficient Image Processing and Convolutional Neural Network (CNN)</a></h3><p class="pub-authors">A. Mohammad, M. Z. Utso, S. B. Habib, <span class="me">A. K. Das</span></p><p class="pub-venue">Journal of Engineering Advancements, vol. 2, no. 04, pp. 221&ndash;227, 2021</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://pdfs.semanticscholar.org/932e/c33f4586310017db1bcbfc667a02049f4965.pdf" target="_blank">PDF</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Predicting+Retinal+Diseases+Image+Processing+CNN%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An efficient image processing and CNN-based approach for predicting retinal diseases from fundus images, enabling early detection and diagnosis.</div><div class="pub-bib">@article{mohammad2021retinal,
+  title={Predicting Retinal Diseases using Efficient Image Processing and Convolutional Neural Network (CNN)},
+  author={Mohammad, A. and Utso, M. Z. and Habib, S. B. and Das, Amit Kumar},
+  journal={Journal of Engineering Advancements},
+  volume={2},
+  number={4},
+  pages={221--227},
+  year={2021}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="journal" data-status="published" data-topic="ML"><span class="pub-number">47.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title">Performance analysis on Bangla handwritten digit recognition using CNN and transfer learning</h3><p class="pub-authors">A. Hossain, M. S. Hasan, M. M. Asif, <span class="me">A. K. Das</span></p><p class="pub-venue">International Journal of Advanced Networking and Applications, vol. 13, no. 1, pp. 4809&ndash;4815, 2021 (Eswar Publications)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Performance+analysis+Bangla+handwritten+digit+recognition+CNN+transfer+learning%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A performance analysis comparing CNN and transfer learning approaches for Bangla handwritten digit recognition on standard datasets.</div><div class="pub-bib">@article{hossain2021performance,
+  title={Performance analysis on Bangla handwritten digit recognition using CNN and transfer learning},
+  author={Hossain, A. and Hasan, M. S. and Asif, M. M. and Das, Amit Kumar},
+  journal={International Journal of Advanced Networking and Applications},
+  volume={13},
+  number={1},
+  pages={4809--4815},
+  year={2021},
+  publisher={Eswar Publications}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="journal" data-status="published" data-topic="LLM/NLP"><span class="pub-number">46.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://doi.org/10.38032/jea.2021.03.001" target="_blank">Sentiment analysis on bengali facebook comments to predict fan's emotions towards a celebrity</a></h3><p class="pub-authors">M. S. S. Khan, S. R. Rafa, <span class="me">A. K. Das</span></p><p class="pub-venue">Journal of Engineering Advancements, vol. 2, no. 03, pp. 118&ndash;124, 2021</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.38032/jea.2021.03.001" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Sentiment+analysis+bengali+facebook+comments+celebrity%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Sentiment analysis of Bengali Facebook comments to predict fan emotions towards celebrities using natural language processing techniques.</div><div class="pub-bib">@article{khan2021sentiment,
+  title={Sentiment analysis on bengali facebook comments to predict fan's emotions towards a celebrity},
+  author={Khan, M. S. S. and Rafa, S. R. and Das, Amit Kumar},
+  journal={Journal of Engineering Advancements},
+  volume={2},
+  number={3},
+  pages={118--124},
+  year={2021}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="journal" data-status="published" data-topic="LLM/NLP"><span class="pub-number">45.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title">Implementation of Recurrent Neural Network with Language Model for Automatic Articulation Identification System in Bangla</h3><p class="pub-authors">M. Mubassira, <span class="me">A. K. Das</span></p><p class="pub-venue">International Journal of Advanced Networking and Applications, vol. 12, no. 6, pp. 4800&ndash;4808, 2021 (Eswar Publications)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Recurrent+Neural+Network+Language+Model+Articulation+Bangla%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An RNN-based automatic articulation identification system for Bangla language, incorporating language model features for improved accuracy.</div><div class="pub-bib">@article{mubassira2021rnn,
+  title={Implementation of Recurrent Neural Network with Language Model for Automatic Articulation Identification System in Bangla},
+  author={Mubassira, M. and Das, Amit Kumar},
+  journal={International Journal of Advanced Networking and Applications},
+  volume={12},
+  number={6},
+  pages={4800--4808},
+  year={2021},
+  publisher={Eswar Publications}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="journal" data-status="published" data-topic="LLM/NLP"><span class="pub-number">44.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://doi.org/10.1515/jisys-2020-0060" target="_blank">Bangla hate speech detection on social media using attention-based recurrent neural network</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, A. Al Asif, A. Paul, M. N. Hossain</p><p class="pub-venue">Journal of Intelligent Systems, vol. 30, no. 1, pp. 578&ndash;591, 2021 (De Gruyter)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1515/jisys-2020-0060" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Bangla+hate+speech+detection+attention-based+recurrent+neural+network%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An attention-based recurrent neural network for detecting hate speech in Bangla social media content, achieving improved classification accuracy over baseline methods.</div><div class="pub-bib">@article{das2021hatespeech,
+  title={Bangla hate speech detection on social media using attention-based recurrent neural network},
+  author={Das, Amit Kumar and Al Asif, A. and Paul, A. and Hossain, M. N.},
+  journal={Journal of Intelligent Systems},
+  volume={30},
+  number={1},
+  pages={578--591},
+  year={2021},
+  publisher={De Gruyter}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="journal" data-status="published" data-topic="ML"><span class="pub-number">43.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://doi.org/10.38032/jea.2021.01.006" target="_blank">Depressed people detection from bangla social media status using LSTM and CNN approach</a></h3><p class="pub-authors">T. F. Mumu, I. J. Munni, <span class="me">A. K. Das</span></p><p class="pub-venue">Journal of Engineering Advancements, vol. 2, no. 01, pp. 41&ndash;47, 2021</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.38032/jea.2021.01.006" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Depressed+people+detection+bangla+social+media+LSTM+CNN%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A deep learning approach combining LSTM and CNN for detecting depression indicators from Bangla social media status updates.</div><div class="pub-bib">@article{mumu2021depressed,
+  title={Depressed people detection from bangla social media status using LSTM and CNN approach},
+  author={Mumu, T. F. and Munni, I. J. and Das, Amit Kumar},
+  journal={Journal of Engineering Advancements},
+  volume={2},
+  number={1},
+  pages={41--47},
+  year={2021}
+}</div></div></div>
+
+<div class="pub-item" data-year="2021" data-venuetype="journal" data-status="published" data-topic="ML"><span class="pub-number">42.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://doi.org/10.38032/jea.2021.01.007" target="_blank">Plant disease detection through the implementation of diversified and modified neural network algorithms</a></h3><p class="pub-authors">F. Nihar, N. N. Khanom, S. S. Hassan, <span class="me">A. K. Das</span></p><p class="pub-venue">Journal of Engineering Advancements, vol. 2, no. 01, pp. 48&ndash;57, 2021</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.38032/jea.2021.01.007" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Plant+disease+detection+diversified+modified+neural+network%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Detection of plant diseases using diversified and modified neural network architectures, comparing multiple deep learning approaches for accurate classification.</div><div class="pub-bib">@article{nihar2021plant,
+  title={Plant disease detection through the implementation of diversified and modified neural network algorithms},
+  author={Nihar, F. and Khanom, N. N. and Hassan, S. S. and Das, Amit Kumar},
+  journal={Journal of Engineering Advancements},
+  volume={2},
+  number={1},
+  pages={48--57},
+  year={2021}
+}</div></div></div>
+</div>
+
+<!-- 2020 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2020</h3>
+
+<div class="pub-item" data-year="2020" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">41.</span><div class="pub-content"><span class="pub-venue-tag">IJCCI'20</span><h3 class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-981-15-3607-6_40" target="_blank">A Digital Platform Design for Supply Chain of Existing Fish Market in Bangladesh</a></h3><p class="pub-authors">R. H. Shaon, M. A. Islam, M. S. H. Khan, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of International Joint Conference on Computational Intelligence (IJCCI), 2020, pp. 497&ndash;513</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://link.springer.com/chapter/10.1007/978-981-15-3607-6_40" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Digital+Platform+Design+Supply+Chain+Fish+Market+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A digital platform design to modernize the supply chain of fish markets in Bangladesh, improving transparency and efficiency for all stakeholders.</div><div class="pub-bib">@inproceedings{shaon2020digital,
+  title={A Digital Platform Design for Supply Chain of Existing Fish Market in Bangladesh},
+  author={Shaon, R. H. and Islam, M. A. and Khan, M. S. H. and Das, Amit Kumar},
+  booktitle={Proceedings of International Joint Conference on Computational Intelligence (IJCCI)},
+  pages={497--513},
+  year={2020},
+  publisher={Springer}
+}</div></div></div>
+</div>
+
+<!-- 2019 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2019</h3>
+
+<div class="pub-item" data-year="2019" data-venuetype="journal" data-status="published" data-topic="ML"><span class="pub-number">40.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://doi.org/10.3390/app9163365" target="_blank">iHealthcare: Predictive Model Analysis Concerning Big Data Applications for Interactive Healthcare Systems</a></h3><p class="pub-authors">M. A. R. Bhuiyan, M. R. Ullah, <span class="me">A. K. Das</span></p><p class="pub-venue">Applied Sciences, vol. 9, no. 16, p. 3365, 2019 (MDPI)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.3390/app9163365" target="_blank">HTML</a><a class="pub-action" href="https://www.mdpi.com/2076-3417/9/16/3365/pdf" target="_blank">PDF</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22iHealthcare+Predictive+Model+Analysis+Big+Data+Interactive+Healthcare%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Predictive model analysis for interactive healthcare systems leveraging big data applications, comparing multiple machine learning approaches for health outcome prediction.</div><div class="pub-bib">@article{bhuiyan2019ihealthcare,
+  title={iHealthcare: Predictive Model Analysis Concerning Big Data Applications for Interactive Healthcare Systems},
+  author={Bhuiyan, M. A. R. and Ullah, M. R. and Das, Amit Kumar},
+  journal={Applied Sciences},
+  volume={9},
+  number={16},
+  pages={3365},
+  year={2019},
+  publisher={MDPI}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">39.</span><div class="pub-content"><span class="pub-venue-tag">ICUIMC'19</span><h3 class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-19063-7_60" target="_blank">Pregnant women's condition and awareness about mood swings: A survey study in Bangladesh</a></h3><p class="pub-authors">N. Jahan, U. S. Fariha, M. R. Ananna, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Ubiquitous Information Management and Communication, 2019, pp. 749&ndash;760</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://link.springer.com/chapter/10.1007/978-3-030-19063-7_60" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Pregnant+women+condition+awareness+mood+swings+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A survey study investigating pregnant women's conditions and awareness about mood swings in Bangladesh, providing insights for healthcare interventions.</div><div class="pub-bib">@inproceedings{jahan2019pregnant,
+  title={Pregnant women's condition and awareness about mood swings: A survey study in Bangladesh},
+  author={Jahan, N. and Fariha, U. S. and Ananna, M. R. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Ubiquitous Information Management and Communication},
+  pages={749--760},
+  year={2019},
+  publisher={Springer}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">38.</span><div class="pub-content"><span class="pub-venue-tag">ICUIMC'19</span><h3 class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-19063-7_59" target="_blank">The Impact of University Students' Smartphone use and academic performance in Bangladesh: a quantitative study</a></h3><p class="pub-authors">M. Mubassira, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Ubiquitous Information Management and Communication, 2019, pp. 734&ndash;748</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://link.springer.com/chapter/10.1007/978-3-030-19063-7_59" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Impact+University+Students+Smartphone+academic+performance+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A quantitative study analyzing the relationship between smartphone usage patterns and academic performance among university students in Bangladesh.</div><div class="pub-bib">@inproceedings{mubassira2019smartphone,
+  title={The Impact of University Students' Smartphone use and academic performance in Bangladesh: a quantitative study},
+  author={Mubassira, M. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Ubiquitous Information Management and Communication},
+  pages={734--748},
+  year={2019},
+  publisher={Springer}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">37.</span><div class="pub-content"><span class="pub-venue-tag">IAICT'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8784823" target="_blank">A deep learning approach to predict malnutrition status of 0-59 month's older children in Bangladesh</a></h3><p class="pub-authors">M. M. Shahriar, M. S. Iqubal, S. Mitra, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the IEEE International Conference on Industry 4.0, AI, and Communications Technology (IAICT), 2019, pp. 145&ndash;149</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8784823" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22deep+learning+predict+malnutrition+children+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A deep learning approach for predicting malnutrition status of young children in Bangladesh using health and demographic survey data.</div><div class="pub-bib">@inproceedings{shahriar2019malnutrition,
+  title={A deep learning approach to predict malnutrition status of 0-59 month's older children in Bangladesh},
+  author={Shahriar, M. M. and Iqubal, M. S. and Mitra, S. and Das, Amit Kumar},
+  booktitle={Proceedings of the IEEE International Conference on Industry 4.0, AI, and Communications Technology (IAICT)},
+  pages={145--149},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">36.</span><div class="pub-content"><span class="pub-venue-tag">ICCCS'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8821655" target="_blank">Joint cognition of both human and machine for predicting criminal punishment in judicial system</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, A. Ashrafi, M. Ahmmad</p><p class="pub-venue">In Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS), 2019, pp. 36&ndash;40</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8821655" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Joint+cognition+human+machine+predicting+criminal+punishment%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A human-machine joint cognition framework for predicting criminal punishment in judicial systems, combining machine learning predictions with human expert judgment.</div><div class="pub-bib">@inproceedings{das2019joint,
+  title={Joint cognition of both human and machine for predicting criminal punishment in judicial system},
+  author={Das, Amit Kumar and Ashrafi, A. and Ahmmad, M.},
+  booktitle={Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS)},
+  pages={36--40},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">35.</span><div class="pub-content"><span class="pub-venue-tag">ICCCS'19</span><h3 class="pub-title"><a href="https://doi.org/10.1109/CCOMS.2019.8821629" target="_blank">A speech recognition system for Bengali language using recurrent neural network</a></h3><p class="pub-authors">J. Islam, M. Mubassira, M. R. Islam, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS), 2019, pp. 73&ndash;76</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1109/CCOMS.2019.8821629" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22speech+recognition+Bengali+language+recurrent+neural+network%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A recurrent neural network-based speech recognition system for the Bengali language, addressing the unique phonetic challenges of Bengali speech.</div><div class="pub-bib">@inproceedings{islam2019speech,
+  title={A speech recognition system for Bengali language using recurrent neural network},
+  author={Islam, J. and Mubassira, M. and Islam, M. R. and Das, Amit Kumar},
+  booktitle={Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS)},
+  pages={73--76},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">34.</span><div class="pub-content"><span class="pub-venue-tag">ICCCS'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8821722" target="_blank">A Driver-Centric Carpooling: Optimal Route-Finding Model Using Heuristic Multi-Objective Search</a></h3><p class="pub-authors">K. M. Habibullah, A. Alam, S. Saha, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS), 2019, pp. 735&ndash;739</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8821722" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Driver-Centric+Carpooling+Optimal+Route+Heuristic+Multi-Objective%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A driver-centric carpooling system using heuristic multi-objective search for finding optimal routes that balance driver convenience with passenger pickup efficiency.</div><div class="pub-bib">@inproceedings{habibullah2019carpooling,
+  title={A Driver-Centric Carpooling: Optimal Route-Finding Model Using Heuristic Multi-Objective Search},
+  author={Habibullah, K. M. and Alam, A. and Saha, S. and Das, Amit Kumar},
+  booktitle={Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS)},
+  pages={735--739},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">33.</span><div class="pub-content"><span class="pub-venue-tag">ICCCS'19</span><h3 class="pub-title"><a href="https://doi.org/10.1109/CCOMS.2019.8821658" target="_blank">An automated system of sentiment analysis from bangla text using supervised learning techniques</a></h3><p class="pub-authors">R. A. Tuhin, B. K. Paul, F. Nawrine, M. Akter, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS), 2019, pp. 360&ndash;364</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1109/CCOMS.2019.8821658" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22automated+sentiment+analysis+bangla+text+supervised+learning%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An automated sentiment analysis system for Bangla text using supervised learning techniques, comparing multiple classification algorithms.</div><div class="pub-bib">@inproceedings{tuhin2019sentiment,
+  title={An automated system of sentiment analysis from bangla text using supervised learning techniques},
+  author={Tuhin, R. A. and Paul, B. K. and Nawrine, F. and Akter, M. and Das, Amit Kumar},
+  booktitle={Proceedings of the 4th IEEE International Conference on Computer and Communication Systems (ICCCS)},
+  pages={360--364},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">32.</span><div class="pub-content"><span class="pub-venue-tag">ICCM'19</span><h3 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3348445.3348480" target="_blank">Bird Species Classification from an Image Using VGG-16 Network</a></h3><p class="pub-authors">S. Islam, S. I. A. Khan, M. M. Abedin, K. M. Habibullah, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 7th International Conference on Computer and Communications Management (ICCM), 2019, pp. 38&ndash;42</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://dl.acm.org/doi/abs/10.1145/3348445.3348480" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Bird+Species+Classification+Image+VGG-16%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A VGG-16 deep neural network approach for classifying bird species from images, achieving high accuracy on a curated dataset.</div><div class="pub-bib">@inproceedings{islam2019bird,
+  title={Bird Species Classification from an Image Using VGG-16 Network},
+  author={Islam, S. and Khan, S. I. A. and Abedin, M. M. and Habibullah, K. M. and Das, Amit Kumar},
+  booktitle={Proceedings of the 7th International Conference on Computer and Communications Management (ICCM)},
+  pages={38--42},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">31.</span><div class="pub-content"><span class="pub-venue-tag">ICCM'19</span><h3 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3348445.3348483" target="_blank">Predicting Crime Using Time and Location Data</a></h3><p class="pub-authors">J. Q. Yuki, M. M. Q. Sakib, Z. Zamal, K. M. Habibullah, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 7th International Conference on Computer and Communications Management (ICCM), 2019, pp. 124&ndash;128</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://dl.acm.org/doi/abs/10.1145/3348445.3348483" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Predicting+Crime+Using+Time+Location+Data%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A crime prediction system leveraging time and location data features to forecast criminal activity patterns in urban areas.</div><div class="pub-bib">@inproceedings{yuki2019crime,
+  title={Predicting Crime Using Time and Location Data},
+  author={Yuki, J. Q. and Sakib, M. M. Q. and Zamal, Z. and Habibullah, K. M. and Das, Amit Kumar},
+  booktitle={Proceedings of the 7th International Conference on Computer and Communications Management (ICCM)},
+  pages={124--128},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">30.</span><div class="pub-content"><span class="pub-venue-tag">ICSCC'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8843661" target="_blank">Named entity recognition in Bengali text using merged hidden Markov model and rule base approach</a></h3><p class="pub-authors">M. D. Drovo, M. Chowdhury, S. I. Uday, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 7th International Conference on Smart Computing &amp; Communications (ICSCC), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8843661" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Named+entity+recognition+Bengali+hidden+Markov%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A named entity recognition system for Bengali text combining hidden Markov models with rule-based approaches for improved entity extraction.</div><div class="pub-bib">@inproceedings{drovo2019ner,
+  title={Named entity recognition in Bengali text using merged hidden Markov model and rule base approach},
+  author={Drovo, M. D. and Chowdhury, M. and Uday, S. I. and Das, Amit Kumar},
+  booktitle={Proceedings of the 7th International Conference on Smart Computing and Communications (ICSCC)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">29.</span><div class="pub-content"><span class="pub-venue-tag">ICSCC'19</span><h3 class="pub-title"><a href="https://doi.org/10.1109/ICSCC.2019.8843640" target="_blank">Road accident analysis and prediction of accident severity by using machine learning in Bangladesh</a></h3><p class="pub-authors">M. F. Labib, A. S. Rifat, M. M. Hossain, <span class="me">A. K. Das</span>, F. Nawrine</p><p class="pub-venue">In Proceedings of the 7th International Conference on Smart Computing &amp; Communications (ICSCC), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1109/ICSCC.2019.8843640" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Road+accident+analysis+prediction+severity+machine+learning+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Machine learning-based analysis and prediction of road accident severity in Bangladesh using historical accident data and environmental factors.</div><div class="pub-bib">@inproceedings{labib2019road,
+  title={Road accident analysis and prediction of accident severity by using machine learning in Bangladesh},
+  author={Labib, M. F. and Rifat, A. S. and Hossain, M. M. and Das, Amit Kumar and Nawrine, F.},
+  booktitle={Proceedings of the 7th International Conference on Smart Computing and Communications (ICSCC)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">28.</span><div class="pub-content"><span class="pub-venue-tag">ICSCC'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8843606" target="_blank">A deep learning approach to detect abusive bengali text</a></h3><p class="pub-authors">E. A. Emon, S. Rahman, J. Banarjee, <span class="me">A. K. Das</span>, T. Mittra</p><p class="pub-venue">In Proceedings of the 7th International Conference on Smart Computing &amp; Communications (ICSCC), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8843606" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22deep+learning+detect+abusive+bengali+text%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A deep learning approach for detecting abusive content in Bengali text on social media platforms.</div><div class="pub-bib">@inproceedings{emon2019abusive,
+  title={A deep learning approach to detect abusive bengali text},
+  author={Emon, E. A. and Rahman, S. and Banarjee, J. and Das, Amit Kumar and Mittra, T.},
+  booktitle={Proceedings of the 7th International Conference on Smart Computing and Communications (ICSCC)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">27.</span><div class="pub-content"><span class="pub-venue-tag">ICSCC'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8843591" target="_blank">PassMan: A new approach of password generation and management without storing</a></h3><p class="pub-authors">J. B. Billa, A. Nawar, M. M. H. Shakil, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 7th International Conference on Smart Computing &amp; Communications (ICSCC), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8843591" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22PassMan+password+generation+management+without+storing%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A novel password generation and management approach that eliminates the need for storing passwords, enhancing security through algorithmic derivation.</div><div class="pub-bib">@inproceedings{billa2019passman,
+  title={PassMan: A new approach of password generation and management without storing},
+  author={Billa, J. B. and Nawar, A. and Shakil, M. M. H. and Das, Amit Kumar},
+  booktitle={Proceedings of the 7th International Conference on Smart Computing and Communications (ICSCC)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">26.</span><div class="pub-content"><span class="pub-venue-tag">ICSCC'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/8843597" target="_blank">Fake news detection in social media using blockchain</a></h3><p class="pub-authors">S. Paul, J. I. Joy, S. Sarker, A. Shakib, S. Ahmed, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 7th International Conference on Smart Computing &amp; Communications (ICSCC), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/abstract/document/8843597" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Fake+news+detection+social+media+blockchain%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A blockchain-based approach for detecting and preventing the spread of fake news on social media platforms through decentralized verification.</div><div class="pub-bib">@inproceedings{paul2019fakenews,
+  title={Fake news detection in social media using blockchain},
+  author={Paul, S. and Joy, J. I. and Sarker, S. and Shakib, A. and Ahmed, S. and Das, Amit Kumar},
+  booktitle={Proceedings of the 7th International Conference on Smart Computing and Communications (ICSCC)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">25.</span><div class="pub-content"><span class="pub-venue-tag">ICSCC'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8843664" target="_blank">Symptom-based disease detection system in bengali using convolution neural network</a></h3><p class="pub-authors">E. Biswas, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 7th International Conference on Smart Computing &amp; Communications (ICSCC), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8843664" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Symptom-based+disease+detection+bengali+convolution+neural+network%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A CNN-based disease detection system that takes symptom descriptions in Bengali as input and predicts potential diseases.</div><div class="pub-bib">@inproceedings{biswas2019symptom,
+  title={Symptom-based disease detection system in bengali using convolution neural network},
+  author={Biswas, E. and Das, Amit Kumar},
+  booktitle={Proceedings of the 7th International Conference on Smart Computing and Communications (ICSCC)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">24.</span><div class="pub-content"><span class="pub-venue-tag">ICSCC'19</span><h3 class="pub-title"><a href="https://doi.org/10.1109/ICSCC.2019.8843613" target="_blank">Auto-correction of english to bengali transliteration system using levenshtein distance</a></h3><p class="pub-authors">M. M. Hossain, M. F. Labib, A. S. Rifat, <span class="me">A. K. Das</span>, M. Mukta</p><p class="pub-venue">In Proceedings of the 7th International Conference on Smart Computing &amp; Communications (ICSCC), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1109/ICSCC.2019.8843613" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Auto-correction+english+bengali+transliteration+levenshtein%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An auto-correction system for English-to-Bengali transliteration using Levenshtein distance for error detection and correction.</div><div class="pub-bib">@inproceedings{hossain2019autocorrection,
+  title={Auto-correction of english to bengali transliteration system using levenshtein distance},
+  author={Hossain, M. M. and Labib, M. F. and Rifat, A. S. and Das, Amit Kumar and Mukta, M.},
+  booktitle={Proceedings of the 7th International Conference on Smart Computing and Communications (ICSCC)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">23.</span><div class="pub-content"><span class="pub-venue-tag">ICAIIT'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8834633" target="_blank">An efficient resource allocation mechanism for time-sensitive data in dew computing</a></h3><p class="pub-authors">M. S. H. Khan, P. Roy, F. Khanam, F. H. Hera, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference of AI and Information Technology (ICAIIT), 2019, pp. 506&ndash;510</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8834633" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22efficient+resource+allocation+time-sensitive+dew+computing%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An efficient resource allocation mechanism designed for handling time-sensitive data in dew computing environments.</div><div class="pub-bib">@inproceedings{khan2019dew,
+  title={An efficient resource allocation mechanism for time-sensitive data in dew computing},
+  author={Khan, M. S. H. and Roy, P. and Khanam, F. and Hera, F. H. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference of AI and Information Technology (ICAIIT)},
+  pages={506--510},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">22.</span><div class="pub-content"><span class="pub-venue-tag">ICAITI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8982116" target="_blank">Digital Governance for Pension Withdrawal System in Bangladesh</a></h3><p class="pub-authors">S. Sultana, M. H. Ullah, S. A. Nisher, M. S. Iqbal, M. R. A. Tuhin, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI), 2019, pp. 185&ndash;189</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8982116" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Digital+Governance+Pension+Withdrawal+System+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A digital governance framework for modernizing the pension withdrawal system in Bangladesh through technology-driven process improvements.</div><div class="pub-bib">@inproceedings{sultana2019pension,
+  title={Digital Governance for Pension Withdrawal System in Bangladesh},
+  author={Sultana, S. and Ullah, M. H. and Nisher, S. A. and Iqbal, M. S. and Tuhin, M. R. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI)},
+  pages={185--189},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">21.</span><div class="pub-content"><span class="pub-venue-tag">ICAITI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8982129" target="_blank">A Behavioral Model of Music piracy in Bangladesh: Factors influencing music piracy</a></h3><p class="pub-authors">S. S. Hassan, F. Nihar, M. Rahman, M. W. Razu, R. A. Tuhin, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI), 2019, pp. 197&ndash;202</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8982129" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Behavioral+Model+Music+piracy+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An analysis of factors influencing music piracy behavior in Bangladesh through a behavioral modeling framework.</div><div class="pub-bib">@inproceedings{hassan2019music,
+  title={A Behavioral Model of Music piracy in Bangladesh: Factors influencing music piracy},
+  author={Hassan, S. S. and Nihar, F. and Rahman, M. and Razu, M. W. and Tuhin, R. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI)},
+  pages={197--202},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">20.</span><div class="pub-content"><span class="pub-venue-tag">ICAITI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8982135" target="_blank">Impact of social media on socialization of university students (A Study on East West University's Undergraduate Students)</a></h3><p class="pub-authors">M. Hassan, A. Saha, N. Saba, R. A. Tuhin, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI), 2019, pp. 173&ndash;178</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8982135" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Impact+social+media+socialization+university+students%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A study examining the impact of social media usage on socialization patterns among undergraduate university students.</div><div class="pub-bib">@inproceedings{hassan2019socialmedia,
+  title={Impact of social media on socialization of university students},
+  author={Hassan, M. and Saha, A. and Saba, N. and Tuhin, R. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI)},
+  pages={173--178},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">19.</span><div class="pub-content"><span class="pub-venue-tag">ICAITI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8982130" target="_blank">Software piracy: Factors and profiling</a></h3><p class="pub-authors">A. Hossain, <span class="me">A. K. Das</span>, T. N. Mim, J. Hoque, R. A. Tuhin</p><p class="pub-venue">In Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI), 2019, pp. 213&ndash;219</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8982130" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Software+piracy+Factors+profiling%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An investigation of factors contributing to software piracy and user profiling of individuals engaging in piracy activities.</div><div class="pub-bib">@inproceedings{hossain2019piracy,
+  title={Software piracy: Factors and profiling},
+  author={Hossain, A. and Das, Amit Kumar and Mim, T. N. and Hoque, J. and Tuhin, R. A.},
+  booktitle={Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI)},
+  pages={213--219},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">18.</span><div class="pub-content"><span class="pub-venue-tag">ICAITI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8982128" target="_blank">Security concerns of ridesharing services in Bangladesh</a></h3><p class="pub-authors">S. T. Cynthia, M. Majumder, A. Tabassum, N. N. Khanom, R. A. Tuhin, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI), 2019, pp. 44&ndash;50</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8982128" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Security+concerns+ridesharing+services+Bangladesh%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An analysis of security concerns faced by users and drivers of ridesharing services in Bangladesh, with recommendations for safety improvements.</div><div class="pub-bib">@inproceedings{cynthia2019ridesharing,
+  title={Security concerns of ridesharing services in Bangladesh},
+  author={Cynthia, S. T. and Majumder, M. and Tabassum, A. and Khanom, N. N. and Tuhin, R. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the 2nd International Conference on Applied Information Technology and Innovation (ICAITI)},
+  pages={44--50},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">17.</span><div class="pub-content"><span class="pub-venue-tag">STI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9068007" target="_blank">An unorthodox way of farming without intermediaries through blockchain</a></h3><p class="pub-authors">S. Paul, J. I. Joy, S. Sarker, A. Shakib, S. Ahmed, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Sustainable Technologies for Industry 4.0 (STI), 2019, pp. 1&ndash;6</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9068007" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22unorthodox+farming+without+intermediaries+blockchain%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A blockchain-based farming system that removes intermediaries from the agricultural supply chain, enabling direct farmer-to-consumer transactions.</div><div class="pub-bib">@inproceedings{paul2019farming,
+  title={An unorthodox way of farming without intermediaries through blockchain},
+  author={Paul, S. and Joy, J. I. and Sarker, S. and Shakib, A. and Ahmed, S. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Sustainable Technologies for Industry 4.0 (STI)},
+  pages={1--6},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">16.</span><div class="pub-content"><span class="pub-venue-tag">STI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9068092" target="_blank">Automated detection of plant diseases using image processing and faster R-CNN algorithm</a></h3><p class="pub-authors">S. T. Cynthia, K. M. S. Hossain, M. N. Hasan, M. Asaduzzaman, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Sustainable Technologies for Industry 4.0 (STI), 2019, pp. 1&ndash;5</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9068092" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Automated+detection+plant+diseases+image+processing+faster+R-CNN%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Automated plant disease detection using image processing techniques combined with Faster R-CNN for accurate identification of diseased plants.</div><div class="pub-bib">@inproceedings{cynthia2019plant,
+  title={Automated detection of plant diseases using image processing and faster R-CNN algorithm},
+  author={Cynthia, S. T. and Hossain, K. M. S. and Hasan, M. N. and Asaduzzaman, M. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Sustainable Technologies for Industry 4.0 (STI)},
+  pages={1--5},
+  year={2019}
+}</div></div></div>
+
+<div class="pub-item" data-year="2019" data-venuetype="conference" data-status="published" data-topic="LLM/NLP"><span class="pub-number">15.</span><div class="pub-content"><span class="pub-venue-tag">STI'19</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/9068063" target="_blank">Bangla word prediction and sentence completion using GRU: an extended version of RNN on N-gram language model</a></h3><p class="pub-authors">O. F. Rakib, S. Akter, M. A. Khan, <span class="me">A. K. Das</span>, K. M. Habibullah</p><p class="pub-venue">In Proceedings of the International Conference on Sustainable Technologies for Industry 4.0 (STI), 2019, pp. 1&ndash;6</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/9068063" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Bangla+word+prediction+sentence+completion+GRU+N-gram%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A GRU-based word prediction and sentence completion system for Bangla, extending RNN approaches with N-gram language model features.</div><div class="pub-bib">@inproceedings{rakib2019bangla,
+  title={Bangla word prediction and sentence completion using GRU: an extended version of RNN on N-gram language model},
+  author={Rakib, O. F. and Akter, S. and Khan, M. A. and Das, Amit Kumar and Habibullah, K. M.},
+  booktitle={Proceedings of the International Conference on Sustainable Technologies for Industry 4.0 (STI)},
+  pages={1--6},
+  year={2019}
+}</div></div></div>
+</div>
+
+<!-- 2017 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2017</h3>
+
+<div class="pub-item" data-year="2017" data-venuetype="journal" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">14.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://link.springer.com/article/10.1007/s11042-016-3852-x" target="_blank">Quality of service aware cloud resource provisioning for social multimedia services and applications</a></h3><p class="pub-authors">T. Adhikary, <span class="me">A. K. Das</span>, M. A. Razzaque, M. Alrubaian, M. M. Hassan, A. Alamri</p><p class="pub-venue">Multimedia Tools and Applications, vol. 76, no. 12, pp. 14485&ndash;14509, 2017 (Springer)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://link.springer.com/article/10.1007/s11042-016-3852-x" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Quality+service+aware+cloud+resource+provisioning+social+multimedia%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A QoS-aware cloud resource provisioning framework for social multimedia services, optimizing resource allocation to meet service level agreements.</div><div class="pub-bib">@article{adhikary2017qos,
+  title={Quality of service aware cloud resource provisioning for social multimedia services and applications},
+  author={Adhikary, T. and Das, Amit Kumar and Razzaque, M. A. and Alrubaian, M. and Hassan, M. M. and Alamri, A.},
+  journal={Multimedia Tools and Applications},
+  volume={76},
+  number={12},
+  pages={14485--14509},
+  year={2017},
+  publisher={Springer}
+}</div></div></div>
+
+<div class="pub-item" data-year="2017" data-venuetype="journal" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">13.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://link.springer.com/article/10.1007/s10586-017-0785-8" target="_blank">Big media healthcare data processing in cloud: a collaborative resource management perspective</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, T. Adhikary, M. A. Razzaque, M. Alrubaian, M. M. Hassan, Z. Uddin, S. Biao</p><p class="pub-venue">Cluster Computing, pp. 1&ndash;16, 2017 (Springer)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://link.springer.com/article/10.1007/s10586-017-0785-8" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Big+media+healthcare+data+processing+cloud+collaborative+resource%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A collaborative resource management framework for processing big healthcare data in cloud environments, optimizing data throughput and processing efficiency.</div><div class="pub-bib">@article{das2017bigmedia,
+  title={Big media healthcare data processing in cloud: a collaborative resource management perspective},
+  author={Das, Amit Kumar and Adhikary, T. and Razzaque, M. A. and Alrubaian, M. and Hassan, M. M. and Uddin, Z. and Biao, S.},
+  journal={Cluster Computing},
+  pages={1--16},
+  year={2017},
+  publisher={Springer}
+}</div></div></div>
+
+<div class="pub-item" data-year="2017" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">12.</span><div class="pub-content"><span class="pub-venue-tag">i-PACT'17</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8245149" target="_blank">Triple-E: Energy Efficient Extended Pool Management Scheme in Cloud Data Centers</a></h3><p class="pub-authors">M. S. Hoque, N. Shawkat, A. A. Chowdhury, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Innovations in Power and Advanced Computing Technologies (i-PACT), 2017</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8245149" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Triple-E+Energy+Efficient+Extended+Pool+Management+Cloud%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An energy-efficient extended pool management scheme for cloud data centers that reduces power consumption while maintaining performance.</div><div class="pub-bib">@inproceedings{hoque2017triplee,
+  title={Triple-E: Energy Efficient Extended Pool Management Scheme in Cloud Data Centers},
+  author={Hoque, M. S. and Shawkat, N. and Chowdhury, A. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Innovations in Power and Advanced Computing Technologies (i-PACT)},
+  year={2017}
+}</div></div></div>
+
+<div class="pub-item" data-year="2017" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">11.</span><div class="pub-content"><span class="pub-venue-tag">ECCE'17</span><h3 class="pub-title"><a href="https://doi.org/10.1109/ECACE.2017.7913013" target="_blank">Q-MAC: QoS and mobility aware optimal resource allocation for dynamic application offloading in mobile cloud computing</a></h3><p class="pub-authors">M. Akter, F. T. Zohra, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Electrical, Computer and Communication Engineering (ECCE), 2017, pp. 803&ndash;808</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://doi.org/10.1109/ECACE.2017.7913013" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Q-MAC+QoS+mobility+aware+resource+allocation+mobile+cloud%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A QoS and mobility-aware optimal resource allocation framework for dynamic application offloading in mobile cloud computing environments.</div><div class="pub-bib">@inproceedings{akter2017qmac,
+  title={Q-MAC: QoS and mobility aware optimal resource allocation for dynamic application offloading in mobile cloud computing},
+  author={Akter, M. and Zohra, F. T. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Electrical, Computer and Communication Engineering (ECCE)},
+  pages={803--808},
+  year={2017}
+}</div></div></div>
+
+<div class="pub-item" data-year="2017" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">10.</span><div class="pub-content"><span class="pub-venue-tag">ICECOS'17</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8167139" target="_blank">Enhancing the capabilities of IoT based fog and cloud infrastructures for time sensitive events</a></h3><p class="pub-authors">F. T. Zohora, M. R. R. Khan, M. F. R. Bhuiyan, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Electrical Engineering and Computer Science (ICECOS), 2017, pp. 224&ndash;230</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8167139" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Enhancing+capabilities+IoT+fog+cloud+time+sensitive%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Enhancing IoT-based fog and cloud infrastructure capabilities for handling time-sensitive events through optimized data processing pipelines.</div><div class="pub-bib">@inproceedings{zohora2017iot,
+  title={Enhancing the capabilities of IoT based fog and cloud infrastructures for time sensitive events},
+  author={Zohora, F. T. and Khan, M. R. R. and Bhuiyan, M. F. R. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Electrical Engineering and Computer Science (ICECOS)},
+  pages={224--230},
+  year={2017}
+}</div></div></div>
+
+<div class="pub-item" data-year="2017" data-venuetype="conference" data-status="published" data-topic="Accessibility"><span class="pub-number">9.</span><div class="pub-content"><span class="pub-venue-tag">ICITEE'17</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/8250507" target="_blank">Interactive interface design for learning numeracy and calculation for children with autism</a></h3><p class="pub-authors">A. Tashnim, S. Nowshin, F. Akter, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 9th International Conference on Information Technology and Electrical Engineering (ICITEE), 2017</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/abstract/document/8250507" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Interactive+interface+learning+numeracy+calculation+children+autism%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An interactive interface designed to help children with autism learn numeracy and calculation skills through engaging visual and interactive elements.</div><div class="pub-bib">@inproceedings{tashnim2017autism,
+  title={Interactive interface design for learning numeracy and calculation for children with autism},
+  author={Tashnim, A. and Nowshin, S. and Akter, F. and Das, Amit Kumar},
+  booktitle={Proceedings of the 9th International Conference on Information Technology and Electrical Engineering (ICITEE)},
+  year={2017}
+}</div></div></div>
+
+<div class="pub-item" data-year="2017" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">8.</span><div class="pub-content"><span class="pub-venue-tag">ICECOS'17</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8167137" target="_blank">An Intelligent Smartphone Based Approach Using IoT for Ensuring Safe Driving</a></h3><p class="pub-authors">M. A. Al Mamun, J. A. Puspo, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the International Conference on Electrical Engineering and Computer Science (ICECOS), 2017, pp. 217&ndash;223</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8167137" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Intelligent+Smartphone+IoT+Ensuring+Safe+Driving%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An IoT-based intelligent smartphone application for ensuring safe driving through real-time monitoring of driver behavior and road conditions.</div><div class="pub-bib">@inproceedings{mamun2017driving,
+  title={An Intelligent Smartphone Based Approach Using IoT for Ensuring Safe Driving},
+  author={Al Mamun, M. A. and Puspo, J. A. and Das, Amit Kumar},
+  booktitle={Proceedings of the International Conference on Electrical Engineering and Computer Science (ICECOS)},
+  pages={217--223},
+  year={2017}
+}</div></div></div>
+
+<div class="pub-item" data-year="2017" data-venuetype="conference" data-status="published" data-topic="ML"><span class="pub-number">7.</span><div class="pub-content"><span class="pub-venue-tag">ICIEV'17</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8338606" target="_blank">IHEMHA: Interactive healthcare system design with emotion computing and medical history analysis</a></h3><p class="pub-authors">M. R. Ullah, M. A. R. Bhuiyan, <span class="me">A. K. Das</span></p><p class="pub-venue">In Proceedings of the 6th International Conference on Informatics, Electronics and Vision (ICIEV-ISCMHT), 2017, pp. 1&ndash;8</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/8338606" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22IHEMHA+Interactive+healthcare+emotion+computing+medical+history%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An interactive healthcare system that integrates emotion computing with medical history analysis for improved patient care and diagnosis.</div><div class="pub-bib">@inproceedings{ullah2017ihemha,
+  title={IHEMHA: Interactive healthcare system design with emotion computing and medical history analysis},
+  author={Ullah, M. R. and Bhuiyan, M. A. R. and Das, Amit Kumar},
+  booktitle={Proceedings of the 6th International Conference on Informatics, Electronics and Vision (ICIEV-ISCMHT)},
+  pages={1--8},
+  year={2017}
+}</div></div></div>
+</div>
+
+<!-- 2016 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2016</h3>
+
+<div class="pub-item" data-year="2016" data-venuetype="journal" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">6.</span><div class="pub-content"><span class="pub-venue-tag journal">Journal</span><h3 class="pub-title"><a href="https://link.springer.com/article/10.1007/s11036-015-0657-5" target="_blank">Quality of service aware reliable task scheduling in vehicular cloud computing</a></h3><p class="pub-authors">T. Adhikary, <span class="me">A. K. Das</span>, M. A. Razzaque, A. Almogren, M. Alrubaian, M. M. Hassan</p><p class="pub-venue">Mobile Networks and Applications, vol. 21, no. 3, pp. 482&ndash;493, 2016 (Springer)</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://link.springer.com/article/10.1007/s11036-015-0657-5" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Quality+service+aware+reliable+task+scheduling+vehicular+cloud%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A QoS-aware reliable task scheduling algorithm for vehicular cloud computing that optimizes task allocation across mobile vehicular nodes.</div><div class="pub-bib">@article{adhikary2016vehicular,
+  title={Quality of service aware reliable task scheduling in vehicular cloud computing},
+  author={Adhikary, T. and Das, Amit Kumar and Razzaque, M. A. and Almogren, A. and Alrubaian, M. and Hassan, M. M.},
+  journal={Mobile Networks and Applications},
+  volume={21},
+  number={3},
+  pages={482--493},
+  year={2016},
+  publisher={Springer}
+}</div></div></div>
+</div>
+
+<!-- 2015 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2015</h3>
+
+<div class="pub-item" data-year="2015" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">5.</span><div class="pub-content"><span class="pub-venue-tag">NSysS'15</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/7042951" target="_blank">Test implementation of a sensor device for measuring soil macronutrients</a></h3><p class="pub-authors">T. Adhikary, <span class="me">A. K. Das</span>, M. A. Razzaque, M. E. H. Chowdhury, S. Parvin</p><p class="pub-venue">In Proceedings of the International Conference on Networking Systems and Security (NSysS), 2015, pp. 1&ndash;8</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/7042951" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Test+implementation+sensor+device+measuring+soil+macronutrients%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Test implementation of a sensor device for measuring soil macronutrients, enabling precision agriculture through real-time soil nutrient monitoring.</div><div class="pub-bib">@inproceedings{adhikary2015soil,
+  title={Test implementation of a sensor device for measuring soil macronutrients},
+  author={Adhikary, T. and Das, Amit Kumar and Razzaque, M. A. and Chowdhury, M. E. H. and Parvin, S.},
+  booktitle={Proceedings of the International Conference on Networking Systems and Security (NSysS)},
+  pages={1--8},
+  year={2015}
+}</div></div></div>
+</div>
+
+<!-- 2014 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2014</h3>
+
+<div class="pub-item" data-year="2014" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">4.</span><div class="pub-content"><span class="pub-venue-tag">ICUIMC'14</span><h3 class="pub-title"><a href="https://dl.acm.org/doi/10.1145/2557977.2558064" target="_blank">A QoS and profit aware cloud confederation model for IaaS service providers</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, T. Adhikary, M. A. Razzaque, E. J. Cho, C. S. Hong</p><p class="pub-venue">In Proceedings of the 8th International Conference on Ubiquitous Information Management and Communication (ICUIMC), 2014, pp. 1&ndash;7</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://dl.acm.org/doi/10.1145/2557977.2558064" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22QoS+profit+aware+cloud+confederation+model+IaaS%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A QoS and profit-aware cloud confederation model for IaaS service providers that optimizes resource sharing across federated cloud environments.</div><div class="pub-bib">@inproceedings{das2014qos,
+  title={A QoS and profit aware cloud confederation model for IaaS service providers},
+  author={Das, Amit Kumar and Adhikary, T. and Razzaque, M. A. and Cho, E. J. and Hong, C. S.},
+  booktitle={Proceedings of the 8th International Conference on Ubiquitous Information Management and Communication (ICUIMC)},
+  pages={1--7},
+  year={2014}
+}</div></div></div>
+</div>
+
+<!-- 2013 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2013</h3>
+
+<div class="pub-item" data-year="2013" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">3.</span><div class="pub-content"><span class="pub-venue-tag">HPCC-EUC'13</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/6832126" target="_blank">Energy-efficient scheduling algorithms for data center resources in cloud computing</a></h3><p class="pub-authors">T. Adhikary, <span class="me">A. K. Das</span>, M. A. Razzaque, A. M. J. Sarkar</p><p class="pub-venue">In Proceedings of the IEEE 10th International Conference on High Performance Computing and Communications (HPCC-EUC), 2013, pp. 1715&ndash;1720</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/6832126" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22Energy-efficient+scheduling+algorithms+data+center+cloud+computing%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">Energy-efficient scheduling algorithms for data center resources in cloud computing environments, reducing power consumption while meeting SLA requirements.</div><div class="pub-bib">@inproceedings{adhikary2013energy,
+  title={Energy-efficient scheduling algorithms for data center resources in cloud computing},
+  author={Adhikary, T. and Das, Amit Kumar and Razzaque, M. A. and Sarkar, A. M. J.},
+  booktitle={Proceedings of the IEEE 10th International Conference on High Performance Computing and Communications (HPCC-EUC)},
+  pages={1715--1720},
+  year={2013}
+}</div></div></div>
+
+<div class="pub-item" data-year="2013" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">2.</span><div class="pub-content"><span class="pub-venue-tag">ICOIN'13</span><h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/6496423" target="_blank">An intelligent approach for virtual machine and QoS provisioning in cloud computing</a></h3><p class="pub-authors"><span class="me">A. K. Das</span>, T. Adhikary, M. A. Razzaque, C. S. Hong</p><p class="pub-venue">In Proceedings of the International Conference on Information Networking (ICOIN), 2013, pp. 462&ndash;467</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://ieeexplore.ieee.org/document/6496423" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22intelligent+approach+virtual+machine+QoS+provisioning+cloud%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">An intelligent approach for virtual machine placement and QoS provisioning in cloud computing, optimizing resource utilization and service quality.</div><div class="pub-bib">@inproceedings{das2013intelligent,
+  title={An intelligent approach for virtual machine and QoS provisioning in cloud computing},
+  author={Das, Amit Kumar and Adhikary, T. and Razzaque, M. A. and Hong, C. S.},
+  booktitle={Proceedings of the International Conference on Information Networking (ICOIN)},
+  pages={462--467},
+  year={2013}
+}</div></div></div>
+</div>
+
+<!-- 2012 -->
+<div class="pub-year-group"><h3 class="pub-year-label">2012</h3>
+
+<div class="pub-item" data-year="2012" data-venuetype="conference" data-status="published" data-topic="Cloud/IoT"><span class="pub-number">1.</span><div class="pub-content"><span class="pub-venue-tag">ICUIMC'12</span><h3 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/2184751.2184888" target="_blank">A distributed wake-up scheduling algorithm for base stations in green cellular networks</a></h3><p class="pub-authors">T. Adhikary, <span class="me">A. K. Das</span>, M. A. Razzaque, M. O. Rahman, C. S. Hong</p><p class="pub-venue">In Proceedings of the 6th International Conference on Ubiquitous Information Management and Communication (ICUIMC), 2012, pp. 1&ndash;7</p><div class="pub-action-links"><a class="pub-action btn-link" onclick="toggleBox(this,'abstract')">Abstract</a><a class="pub-action btn-link" onclick="toggleBox(this,'bib')">Bib</a><a class="pub-action" href="https://dl.acm.org/doi/abs/10.1145/2184751.2184888" target="_blank">HTML</a><a class="pub-action scholar-badge" href="https://scholar.google.com/scholar?q=%22distributed+wake-up+scheduling+base+stations+green+cellular%22" target="_blank">Google Scholar</a></div><div class="pub-abstract">A distributed wake-up scheduling algorithm for base stations in green cellular networks, reducing energy consumption through intelligent sleep/wake cycles.</div><div class="pub-bib">@inproceedings{adhikary2012distributed,
+  title={A distributed wake-up scheduling algorithm for base stations in green cellular networks},
+  author={Adhikary, T. and Das, Amit Kumar and Razzaque, M. A. and Rahman, M. O. and Hong, C. S.},
+  booktitle={Proceedings of the 6th International Conference on Ubiquitous Information Management and Communication (ICUIMC)},
+  pages={1--7},
+  year={2012}
+}</div></div></div>
+</div>
+
+<div class="no-results"><p>No publications match the selected filters.</p><button class="filter-btn" onclick="clearAllFilters()" style="margin-top:10px;">Clear Filters</button></div>
+</section>
+<footer class="footer"><div class="footer-inner"><ul class="footer-links"><li><a href="mailto:amidas@cs.stonybrook.edu">Email</a></li><li><a href="https://www.linkedin.com/in/amit-kumar-das-191ba51b/" target="_blank">LinkedIn</a></li><li><a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank">Google Scholar</a></li></ul><p>&copy; 2026 Amit Kumar Das. All rights reserved.</p></div></footer>
+<script src="js/main.js"></script>
+<script>
+function toggleBox(btn, type){
+  const item = btn.closest('.pub-content');
+  const box = item.querySelector('.pub-' + type);
+  const other = item.querySelector('.pub-' + (type === 'abstract' ? 'bib' : 'abstract'));
+  if (other) other.classList.remove('show');
+  box.classList.toggle('show');
+}
+</script>
+</body></html>
