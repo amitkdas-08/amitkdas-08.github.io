@@ -81,6 +81,19 @@ img{max-width:100%;display:block}
 .viz-value{font-family:var(--font-mono);font-size:10.5px;font-weight:500;fill:var(--text)}
 .viz-cell-note{font-size:12px}
 .viz-bar.clickable{cursor:pointer}
+.viz-unit{transition:transform var(--tr),filter var(--tr);transform-box:fill-box;transform-origin:center}
+.viz-unit.flag{stroke:var(--dark);stroke-width:1.6}
+.viz-unit.clickable{cursor:pointer}
+.viz-unit:hover{transform:scale(1.25);filter:brightness(1.08)}
+.viz-era{font-family:var(--font-body);font-size:10.5px;font-weight:600;fill:var(--text)}
+.clickable-year{cursor:pointer}
+.clickable-year:hover{fill:var(--accent);font-weight:600}
+.venue-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.venue-chip{display:inline-flex;align-items:baseline;gap:6px;padding:5px 11px;border:1px solid var(--border);border-radius:999px;font-size:.76rem;color:var(--text);background:var(--bg-alt);cursor:pointer;font-family:var(--font-body)}
+.venue-chip b{color:var(--dark);font-weight:700}
+.venue-chip span{color:var(--text-light);font-size:.7rem}
+.venue-chip:hover{border-color:var(--accent);color:var(--accent)}
+.legend-flag{width:10px;height:10px;border-radius:3px;display:inline-block;border:1.6px solid var(--dark);background:transparent!important}
 .viz-bar:hover rect:not([fill="transparent"]):not(.viz-track){filter:brightness(1.12)}
 .viz-dot{stroke:var(--surface);stroke-width:1.5;transition:r var(--tr)}
 .viz-dot.clickable{cursor:pointer}

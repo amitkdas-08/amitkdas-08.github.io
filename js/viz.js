@@ -238,7 +238,61 @@ const VZ = (() => {
     });
   }
 
-  return { stackedYears, hbars, gantt, dotTimeline, heatmap, legend };
+  /* Unit chart: one square per item, stacked in year columns, with an optional era band underneath.
+     opts: {items:[{year,cat,flag,tip,onClick}], cats:[{key,color}], eras:[{label,from,to,color}], onYear, label} */
+  function unitTimeline(container, opts) {
+    responsive(container, w => {
+      const ys = opts.items.map(d => d.year);
+      const minY = opts.from || Math.min(...ys), maxY = opts.to || Math.max(...ys);
+      const years = []; for (let y = minY; y <= maxY; y++) years.push(y);
+      const step = (w - 8) / years.length;
+      const perRow = step >= 60 ? 3 : step >= 18 ? 2 : 1;
+      const g = step < 30 ? 1.5 : 2, s = Math.max(5.5, Math.min(15, (step - 4) / perRow - g));
+      const order = Object.fromEntries(opts.cats.map((c, i) => [c.key, i]));
+      const byYear = {};
+      for (const d of opts.items) (byYear[d.year] = byYear[d.year] || []).push(d);
+      let maxRows = 1;
+      for (const y in byYear) {
+        byYear[y].sort((a, b) => order[a.cat] - order[b.cat] || (b.flag ? 1 : 0) - (a.flag ? 1 : 0));
+        maxRows = Math.max(maxRows, Math.ceil(byYear[y].length / perRow));
+      }
+      const top = 16, base = top + maxRows * (s + g), eraH = opts.eras ? 22 : 0;
+      const h = base + 20 + eraH + 4;
+      const svg = svgRoot(container, w, h, opts.label);
+      el('line', { x1: 4, x2: w - 4, y1: base + 1, y2: base + 1, class: 'viz-baseline' }, svg);
+      years.forEach((yr, i) => {
+        const cx = 4 + i * step, list = byYear[yr] || [];
+        const bw = perRow * (s + g) - g, x0 = cx + (step - bw) / 2;
+        list.forEach((d, k) => {
+          const r = Math.floor(k / perRow), c = k % perRow;
+          const x = x0 + c * (s + g), y = base - (r + 1) * (s + g) + g;
+          const color = (opts.cats.find(t => t.key === d.cat) || {}).color || '#94A3B8';
+          const n = el('rect', { x, y, width: s, height: s, rx: Math.min(3, s / 4), fill: color,
+            class: 'viz-unit' + (d.flag ? ' flag' : '') + (d.onClick ? ' clickable' : '') }, svg);
+          if (d.tip) bindTip(n, d.tip);
+          if (d.onClick) n.addEventListener('click', d.onClick);
+        });
+        if (list.length) text(svg, cx + step / 2, base - Math.ceil(list.length / perRow) * (s + g) - 3, list.length,
+          { class: 'viz-axis', 'text-anchor': 'middle' });
+        const every = step < 24 ? 2 : 1;
+        if (i % every === 0 || i === years.length - 1) {
+          const t = text(svg, cx + step / 2, base + 14, step < 34 ? `'${String(yr).slice(2)}` : yr,
+            { class: 'viz-axis' + (list.length && opts.onYear ? ' clickable-year' : ''), 'text-anchor': 'middle' });
+          if (list.length && opts.onYear) t.addEventListener('click', () => opts.onYear(yr));
+        }
+      });
+      (opts.eras || []).forEach(e => {
+        const x1 = 4 + (e.from - minY) * step + 1, x2 = 4 + (e.to - minY + 1) * step - 1;
+        const y = base + 22;
+        el('rect', { x: x1, y, width: Math.max(2, x2 - x1), height: eraH - 6, rx: 4, fill: e.color, opacity: .16 }, svg);
+        el('rect', { x: x1, y, width: 3, height: eraH - 6, rx: 1.5, fill: e.color }, svg);
+        const label = (x2 - x1) > e.label.length * 6.2 + 12 ? e.label : (e.short || '');
+        if (label) text(svg, x1 + 8, y + 11.5, label, { class: 'viz-era' });
+      });
+    });
+  }
+
+  return { stackedYears, hbars, gantt, dotTimeline, heatmap, legend, unitTimeline };
 })();
 
 /* Shared category palettes */
