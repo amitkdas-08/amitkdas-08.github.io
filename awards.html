@@ -39,6 +39,11 @@
 <div class="tab-content" id="tab-awards">
 <div class="timeline-card">
 <span class="timeline-year">2026</span>
+<h4 class="timeline-title">🏅 Special Recognition for Outstanding Reviews — IUI 2027</h4>
+<p class="timeline-desc">Received recognition for outstanding review quality at IUI 2027 (ACM Conference on Intelligent User Interfaces).</p>
+</div>
+<div class="timeline-card">
+<span class="timeline-year">2026</span>
 <h4 class="timeline-title">🏅 Special Recognition for Outstanding Reviews — CHI 2026</h4>
 <p class="timeline-desc">Received recognition for outstanding review quality at CHI 2026 (ACM Conference on Human Factors in Computing Systems).</p>
 </div>
@@ -117,16 +122,17 @@
 
 <!-- Service -->
 <div class="tab-content" id="tab-service">
-<div class="viz-panel" style="max-width:420px;">
-<div class="viz-panel-head"><h2 class="viz-title">Conference reviewing</h2><span class="viz-sub">🏅 = outstanding review recognition</span></div>
-<div id="review-heatmap" class="viz-chart" aria-label="Heatmap of conference reviewing by venue and year"></div>
+<div class="viz-panel" style="max-width:500px;">
+<div class="viz-panel-head"><h2 class="viz-title">Peer reviewing</h2><span class="viz-sub">🏅 = outstanding review recognition · hover for details</span></div>
+<div id="review-heatmap" class="viz-chart" aria-label="Heatmap of peer reviewing by venue and year"></div>
 </div>
 <h3 style="font-family:var(--font-display);font-size:1.15rem;color:var(--dark);margin-bottom:16px;">Conference & Journal Reviewing</h3>
 <div class="service-grid">
-<div class="service-card"><div class="name">CHI</div><div class="years">2025, 2026 🏅</div></div>
-<div class="service-card"><div class="name">IEEE VIS</div><div class="years">2025</div></div>
+<div class="service-card"><div class="name">CHI</div><div class="years">2025, 2026 🏅, 2027</div></div>
+<div class="service-card"><div class="name">IUI</div><div class="years">2025, 2026 🏅, 2027 🏅</div></div>
+<div class="service-card"><div class="name">IEEE VIS</div><div class="years">2025, 2026</div></div>
+<div class="service-card"><div class="name">IEEE TVCG</div><div class="years">Journal · 2026</div></div>
 <div class="service-card"><div class="name">CSCW</div><div class="years">2025, 2026</div></div>
-<div class="service-card"><div class="name">IUI</div><div class="years">2025, 2026 🏅</div></div>
 <div class="service-card"><div class="name">IEEE Access</div><div class="years">Journal</div></div>
 <div class="service-card"><div class="name">FGCS</div><div class="years">Elsevier</div></div>
 <div class="service-card"><div class="name">STI</div><div class="years">Conference</div></div>
@@ -160,21 +166,27 @@ const AW_EVENTS = [
   [2025, 'award', 'Outstanding Review recognition, IUI 2026'],
   [2026, 'award', 'Outstanding Review recognition, CHI 2026'],
   [2026, 'talk', 'Innocence Network Conference 2026, Chicago (NSF BIAS-NRT)'],
+  [2026, 'award', 'Outstanding Review recognition, IUI 2027'],
 ].map(([y, cat, label]) => ({ date: new Date(y, 0, 1), cat, label }));
 VZ.dotTimeline(document.getElementById('awards-timeline'), {
   events: AW_EVENTS, cats: AW_CATS, unit: 'year', from: new Date(2014, 0, 1), to: new Date(2026, 0, 1), label: 'Awards and talks timeline'
 });
 VZ.legend(document.getElementById('awards-legend'), Object.values(AW_CATS));
 VZ.heatmap(document.getElementById('review-heatmap'), {
-  rows: ['CHI', 'IUI', 'CSCW', 'IEEE VIS'], cols: ['2025', '2026'], color: '#0891B2',
+  // Conference columns use the conference year; TVCG uses the calendar year of the reviews.
+  rows: ['CHI', 'IUI', 'IEEE VIS', 'IEEE TVCG', 'CSCW'], cols: ['2025', '2026', '2027'], color: '#0891B2',
   cells: {
     'CHI|2025': { v: 1, tip: 'Papers and Case Studies reviewer' },
     'CHI|2026': { v: 2, note: '🏅', tip: 'Papers reviewer · Special Recognition for Outstanding Reviews' },
+    'CHI|2027': { v: 1, tip: 'Papers reviewer · 1 paper (Oct 2026)' },
     'IUI|2025': { v: 1, tip: 'Papers reviewer' },
     'IUI|2026': { v: 2, note: '🏅', tip: 'Papers reviewer · Special Recognition for Outstanding Reviews' },
+    'IUI|2027': { v: 2, note: '🏅', tip: 'Papers reviewer · 4 papers (Nov 2026) · Special Recognition for Outstanding Reviews' },
+    'IEEE VIS|2025': { v: 1, tip: 'Papers reviewer' },
+    'IEEE VIS|2026': { v: 1, tip: 'Papers reviewer · 4 papers (Jul 2026)' },
+    'IEEE TVCG|2026': { v: 1, tip: 'Journal reviewer · 3 papers (Jan, Jun, Jul 2026)' },
     'CSCW|2025': { v: 1, tip: 'Papers reviewer' },
     'CSCW|2026': { v: 1, tip: 'Papers reviewer' },
-    'IEEE VIS|2025': { v: 1, tip: 'Papers reviewer' },
   },
   label: 'Reviewing heatmap'
 });
