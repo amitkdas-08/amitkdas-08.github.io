@@ -1,9 +1,28 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css"><title>Teaching — Amit Kumar Das</title></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css?v=2"><title>Teaching — Amit Kumar Das</title></head><body>
 <nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-brand">Amit</a><ul class="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards & Talks</a></li><li><a href="news.html">News</a></li><li><a href="cv.html">CV</a></li></ul><button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
 
-<header class="page-header"><div class="page-header-inner"><h1 class="fade-in">Teaching & Supervision</h1><p class="fade-in d1">1,600+ students taught across AI, Machine Learning, NLP, Visualization, and CS fundamentals.</p></div></header>
+<header class="page-header"><div class="page-header-inner"><h1 class="fade-in">Teaching & Supervision</h1><p class="fade-in d1">1,200+ students taught across AI, Machine Learning, NLP, Visualization, and CS fundamentals.</p></div></header>
 
 <section class="section" style="padding-top:20px;">
+
+<div class="viz-panel fade-in d1">
+<div class="kpi-row">
+<div class="kpi" style="--kc:#0891B2"><b>35+</b><span>Sections taught</span></div>
+<div class="kpi" style="--kc:#059669"><b>11</b><span>Distinct courses</span></div>
+<div class="kpi" style="--kc:#F59E0B"><b>4.7–5.0</b><span>Student evaluations</span></div>
+<div class="kpi" style="--kc:#7C3AED"><b>150+</b><span>Student researchers</span></div>
+</div>
+<div class="viz-grid-2">
+<div>
+<div class="viz-panel-head"><h2 class="viz-title">Students taught by course</h2><span class="viz-sub">East West University, 2016–2021 (approx.)</span></div>
+<div id="teach-course-chart" class="viz-chart" aria-label="Bar chart of approximate students taught per course"></div>
+</div>
+<div>
+<div class="viz-panel-head"><h2 class="viz-title">Semesters per course</h2><span class="viz-sub">Courses taught as instructor of record</span></div>
+<div id="teach-sem-chart" class="viz-chart" aria-label="Bar chart of semesters taught per course"></div>
+</div>
+</div>
+</div>
 
 <h2 class="section-title" style="margin-bottom:20px;">Stony Brook University <span style="font-family:var(--font-body);font-size:.8rem;color:var(--text-light);font-weight:400;margin-left:8px;">Teaching Assistant · Jan 2022 – Present</span></h2>
 
@@ -32,7 +51,7 @@
 
 <div class="course-card fade-in d4"><div class="course-header"><div class="course-name">Additional Courses</div><div class="course-meta">Various semesters</div></div><p class="course-desc">Numerical Methods (2 semesters), Object Oriented Programming (2 semesters), Web Technology (2 semesters), Introduction to Computers (1 semester).</p></div>
 
-<p style="font-size:.87rem;color:var(--text-light);margin-top:14px;"><strong>Total:</strong> 35+ sections, 1,000+ students across all courses.</p>
+<p style="font-size:.87rem;color:var(--text-light);margin-top:14px;"><strong>Total:</strong> 35+ sections, 1,200+ students across all courses.</p>
 
 <hr class="divider" style="margin:32px 0;">
 
@@ -51,4 +70,30 @@
 </section>
 <footer class="footer"><div class="footer-inner"><ul class="footer-links"><li><a href="mailto:amidas@cs.stonybrook.edu">Email</a></li><li><a href="https://www.linkedin.com/in/amit-kumar-das-191ba51b/" target="_blank">LinkedIn</a></li><li><a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank">Google Scholar</a></li></ul><p>&copy; 2026 Amit Kumar Das. All rights reserved.</p></div></footer>
 <script src="js/main.js"></script>
+<script src="js/viz.js"></script>
+<script>
+const AI = '#059669', SYS = '#0891B2', PROG = '#94A3B8';
+const COURSES = [
+  { label: 'Artificial Intelligence', students: 400, sem: 10, color: AI },
+  { label: 'Machine Learning', students: 210, sem: 6, color: AI },
+  { label: 'C Programming', students: 210, sem: 6, color: PROG },
+  { label: 'Java Programming', students: 180, sem: 6, color: PROG },
+  { label: 'Algorithms', students: 140, sem: 4, color: SYS },
+  { label: 'Data Structures', students: 120, sem: 4, color: SYS },
+];
+VZ.hbars(document.getElementById('teach-course-chart'), {
+  rows: COURSES.map(c => ({ label: c.label, value: c.students, color: c.color, display: '~' + c.students,
+    tip: `<b>${c.label}</b><div>~${c.students} students · ${c.sem} semesters</div>` })),
+  labelWidth: 150, label: 'Students taught by course'
+});
+const SEMS = [...COURSES, { label: 'Numerical Methods', sem: 2, color: SYS }, { label: 'OOP', sem: 2, color: PROG },
+  { label: 'Web Technology', sem: 2, color: PROG }, { label: 'Intro to Computers', sem: 1, color: PROG }];
+VZ.hbars(document.getElementById('teach-sem-chart'), {
+  rows: SEMS.map(c => ({ label: c.label, value: c.sem, color: c.color,
+    tip: `<b>${c.label}</b><div>${c.sem} semester${c.sem > 1 ? 's' : ''}</div>` })),
+  labelWidth: 140, barHeight: 12, label: 'Semesters per course'
+});
+VZ.legend(document.getElementById('teach-sem-chart').parentNode, [
+  { label: 'AI / ML', color: AI }, { label: 'Algorithms & systems', color: SYS }, { label: 'Programming', color: PROG }]);
+</script>
 </body></html>

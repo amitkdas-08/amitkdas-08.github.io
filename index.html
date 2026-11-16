@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css"><title>Amit Kumar Das — Visualization & Human-Centered AI Researcher</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css?v=2"><title>Amit Kumar Das — Visualization & Human-Centered AI Researcher</title>
 <style>
 .home-news-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:22px 0;max-height:220px;overflow-y:auto}
 .home-news-box::-webkit-scrollbar{width:6px}
@@ -21,7 +21,33 @@
 
 <header class="hero">
 <div class="hero-inner">
-<div class="hero-photo fade-in"><div class="photo-frame"><img src="img/profile.png" alt="Amit Kumar Das"></div></div>
+<aside class="hero-photo fade-in">
+<div class="photo-frame"><img src="img/profile.png" alt="Amit Kumar Das"></div>
+<div class="profile-card">
+<h3>Education</h3>
+<ul class="edu-list">
+<li class="current"><strong>Ph.D., Computer Science</strong>Stony Brook University<br><span class="yr">2022 – 2026 (expected)</span></li>
+<li><strong>M.S., Computer Science &amp; Engineering</strong>University of Dhaka<br><span class="yr">2015</span></li>
+<li><strong>B.S., Computer Science &amp; Engineering</strong>University of Dhaka<br><span class="yr">2013</span></li>
+</ul>
+<h3>At a glance</h3>
+<div class="kpi-mini">
+<div><b>64</b><span>Papers</span></div>
+<div><b>2,364</b><span>Citations</span></div>
+<div><b>28</b><span>h-index</span></div>
+</div>
+<h3>Publications per year</h3>
+<div id="home-pub-chart" class="viz-chart" aria-label="Bar chart of publications per year, 2012 to 2026"></div>
+<div id="home-pub-legend"></div>
+<h3>Quick facts</h3>
+<ul class="profile-facts">
+<li><span>🎓</span><span>Ph.D. defense: December 15, 2026</span></li>
+<li><span>🏅</span><span>NSF BIAS-NRT Fellow (2024 – present)</span></li>
+<li><span>🏫</span><span>5+ years as Senior Lecturer; 1,200+ students taught</span></li>
+<li><span>📍</span><span>Stony Brook, New York</span></li>
+</ul>
+</div>
+</aside>
 <div class="hero-content">
 <h1 class="fade-in">Amit Kumar Das</h1>
 <p class="hero-tagline fade-in d1">Ph.D. Candidate in Computer Science</p>
@@ -64,6 +90,32 @@
 </div>
 </div></div></header>
 
+<section class="highlights">
+<div class="section-header"><h2 class="section-title">Research Highlights</h2><a href="publications.html" class="section-link">All publications →</a></div>
+<div class="hl-grid">
+<a class="hl-card fade-in" style="--hc:#059669" href="https://arxiv.org/abs/2508.04842" target="_blank"><img src="img/pubs/charts-of-thought-enhancing-llm-visualization-li.svg" alt="Illustration of Charts-of-Thought: chart to table to reasoning, with VLAT scores" loading="lazy"><div><span class="hl-venue">IEEE TVCG · VIS 2025</span><h4>Charts-of-Thought</h4><p>Teaching LLMs to read charts: structured data extraction lifts visualization-literacy scores above the human baseline.</p></div></a>
+<a class="hl-card fade-in d1" style="--hc:#7C3AED" href="https://arxiv.org/abs/2508.04679" target="_blank"><img src="img/pubs/misvisfix-an-interactive-dashboard-for-detecting.svg" alt="Illustration of MisVisFix: a truncated-axis chart flagged and corrected" loading="lazy"><div><span class="hl-venue">IEEE TVCG · VIS 2025</span><h4>MisVisFix</h4><p>An LLM-powered dashboard that detects, explains, and corrects misleading visualizations across 74 issue types.</p></div></a>
+<a class="hl-card fade-in d2" style="--hc:#D97706" href="https://dl.acm.org/doi/10.1145/3772363.3799030" target="_blank"><img src="img/pubs/making-charts-speak-llm-based-conversational-cha.svg" alt="Illustration of conversational chart question answering for blind and low-vision users" loading="lazy"><div><span class="hl-venue">CHI 2026 EA · TVCG (review)</span><h4>Making Charts Speak</h4><p>Conversational chart question answering that makes data accessible to blind and low-vision users.</p></div></a>
+<a class="hl-card fade-in d3" style="--hc:#059669" href="https://doi.org/10.1145/3706599.3720018" target="_blank"><img src="img/pubs/leveraging-large-language-models-for-personalize.svg" alt="Illustration of a persona-by-message preference matrix" loading="lazy"><div><span class="hl-venue">CHI 2025 EA · TOCHI (review)</span><h4>Personalized Public Messaging</h4><p>LLMs + conjoint analysis predict how 2,040 people respond to public-health messages, at 1% of the survey cost.</p></div></a>
+</div>
+</section>
+
 <footer class="footer"><div class="footer-inner"><ul class="footer-links"><li><a href="mailto:amidas@cs.stonybrook.edu">Email</a></li><li><a href="https://www.linkedin.com/in/amit-kumar-das-191ba51b/" target="_blank">LinkedIn</a></li><li><a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank">Google Scholar</a></li></ul><p>&copy; 2026 Amit Kumar Das. All rights reserved.</p></div></footer>
 <script src="js/main.js"></script>
+<script src="js/viz.js"></script>
+<script>
+// Publications per year (keep in sync with publications.html when adding papers)
+const PUBS_BY_YEAR = {
+  2012:{conference:1}, 2013:{conference:2}, 2014:{conference:1}, 2015:{conference:1}, 2016:{journal:1},
+  2017:{journal:2,conference:6}, 2019:{journal:1,conference:25}, 2020:{conference:1},
+  2021:{journal:7,conference:4}, 2022:{journal:1,conference:3}, 2023:{journal:1},
+  2025:{journal:2,workshop:1}, 2026:{workshop:4,'under-review':4}
+};
+const years = []; for (let y = 2012; y <= 2026; y++) years.push(y);
+VZ.stackedYears(document.getElementById('home-pub-chart'), {
+  years, series: VZ.TYPE, data: PUBS_BY_YEAR, height: 92, compact: true,
+  label: 'Publications per year', onClick: y => { location.href = 'publications.html#year=' + y; }
+});
+VZ.legend(document.getElementById('home-pub-legend'), VZ.TYPE);
+</script>
 </body></html>

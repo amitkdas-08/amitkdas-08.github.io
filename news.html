@@ -1,9 +1,14 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css"><title>News — Amit Kumar Das</title></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css?v=2"><title>News — Amit Kumar Das</title></head><body>
 <nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-brand">Amit</a><ul class="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards & Talks</a></li><li><a href="news.html">News</a></li><li><a href="cv.html">CV</a></li></ul><button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
 
 <header class="page-header"><div class="page-header-inner"><h1 class="fade-in">News</h1><p class="fade-in d1">Updates on publications, awards, and research milestones.</p></div></header>
 
 <section class="section" style="padding-top:20px;">
+<div class="viz-panel fade-in d1">
+<div class="viz-panel-head"><h2 class="viz-title">Activity timeline</h2><span class="viz-sub">Each dot is a news item · click to jump to it</span></div>
+<div id="news-timeline" class="viz-chart" aria-label="Timeline of news items by month since 2024"></div>
+<div id="news-legend"></div>
+</div>
 <ul class="news-list">
 
 <li class="news-item" style="border-bottom:none;margin-bottom:6px;"><span class="news-date" style="font-weight:700;color:var(--dark);font-size:.88rem;">2026</span><span></span></li>
@@ -58,4 +63,31 @@
 </section>
 <footer class="footer"><div class="footer-inner"><ul class="footer-links"><li><a href="mailto:amidas@cs.stonybrook.edu">Email</a></li><li><a href="https://www.linkedin.com/in/amit-kumar-das-191ba51b/" target="_blank">LinkedIn</a></li><li><a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank">Google Scholar</a></li></ul><p>&copy; 2026 Amit Kumar Das. All rights reserved.</p></div></footer>
 <script src="js/main.js"></script>
+<script src="js/viz.js"></script>
+<script>
+// Built from the news list below: category comes from the item's leading emoji.
+(() => {
+  const CATS = {
+    paper: { label: 'Paper accepted', color: '#0891B2' },
+    talk: { label: 'Talk / event', color: '#7C3AED' },
+    award: { label: 'Award', color: '#F59E0B' },
+    milestone: { label: 'Milestone', color: '#059669' },
+  };
+  const catOf = s => /^(📄|🏆)/u.test(s) ? 'paper' : /^🎤/u.test(s) ? 'talk' : /^🏅/u.test(s) ? 'award' : 'milestone';
+  const events = [];
+  document.querySelectorAll('.news-item').forEach(li => {
+    const d = li.querySelector('.news-date'), t = li.querySelector('.news-text');
+    if (!d || !t) return;
+    const date = new Date(d.textContent.trim());
+    if (isNaN(date) || !/\d{1,2},/.test(d.textContent)) return;
+    const label = t.textContent.replace(/^\S+\s*/u, '').slice(0, 110) + (t.textContent.length > 110 ? '…' : '');
+    events.push({ date, cat: catOf(t.textContent.trim()), label, node: li });
+  });
+  const now = new Date();
+  VZ.dotTimeline(document.getElementById('news-timeline'), {
+    events, cats: CATS, from: new Date(2024, 0, 1), to: new Date(now.getFullYear(), 11, 1), label: 'News timeline'
+  });
+  VZ.legend(document.getElementById('news-legend'), Object.values(CATS));
+})();
+</script>
 </body></html>

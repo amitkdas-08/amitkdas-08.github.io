@@ -1,0 +1,5 @@
+# Private CV sources (only the compiled PDF in assets/ is published)
+CV_Latex/
+
+# Local editor/preview config
+.claude/

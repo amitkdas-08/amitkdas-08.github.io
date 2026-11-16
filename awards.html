@@ -1,9 +1,14 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css"><title>Awards, Grants & Talks — Amit Kumar Das</title></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="css/style.css?v=2"><title>Awards, Grants & Talks — Amit Kumar Das</title></head><body>
 <nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-brand">Amit</a><ul class="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards & Talks</a></li><li><a href="news.html">News</a></li><li><a href="cv.html">CV</a></li></ul><button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
 
 <header class="page-header"><div class="page-header-inner"><h1 class="fade-in">Awards, Grants & Talks</h1><p class="fade-in d1">Fellowships, honors, invited talks, and professional service contributions.</p></div></header>
 
 <section class="section" style="padding-top:20px;">
+<div class="viz-panel fade-in d1">
+<div class="viz-panel-head"><h2 class="viz-title">Recognition &amp; talks over time</h2><span class="viz-sub">Hover a dot for details</span></div>
+<div id="awards-timeline" class="viz-chart" aria-label="Timeline of grants, awards, and talks by year"></div>
+<div id="awards-legend"></div>
+</div>
 <div class="sub-tabs fade-in">
 <button class="sub-tab active" data-tab="tab-grants">Grants & Fellowships</button>
 <button class="sub-tab" data-tab="tab-awards">Awards & Honors</button>
@@ -112,6 +117,10 @@
 
 <!-- Service -->
 <div class="tab-content" id="tab-service">
+<div class="viz-panel" style="max-width:420px;">
+<div class="viz-panel-head"><h2 class="viz-title">Conference reviewing</h2><span class="viz-sub">🏅 = outstanding review recognition</span></div>
+<div id="review-heatmap" class="viz-chart" aria-label="Heatmap of conference reviewing by venue and year"></div>
+</div>
 <h3 style="font-family:var(--font-display);font-size:1.15rem;color:var(--dark);margin-bottom:16px;">Conference & Journal Reviewing</h3>
 <div class="service-grid">
 <div class="service-card"><div class="name">CHI</div><div class="years">2025, 2026 🏅</div></div>
@@ -129,4 +138,45 @@
 </section>
 <footer class="footer"><div class="footer-inner"><ul class="footer-links"><li><a href="mailto:amidas@cs.stonybrook.edu">Email</a></li><li><a href="https://www.linkedin.com/in/amit-kumar-das-191ba51b/" target="_blank">LinkedIn</a></li><li><a href="https://scholar.google.com/citations?user=yXXXbR4AAAAJ&hl=en" target="_blank">Google Scholar</a></li></ul><p>&copy; 2026 Amit Kumar Das. All rights reserved.</p></div></footer>
 <script src="js/main.js"></script>
+<script src="js/viz.js"></script>
+<script>
+const AW_CATS = {
+  grant: { label: 'Grant / fellowship', color: '#059669' },
+  award: { label: 'Award / honor', color: '#F59E0B' },
+  talk: { label: 'Talk / presentation', color: '#7C3AED' },
+};
+const AW_EVENTS = [
+  [2014, 'grant', 'ICT Ministry Fellowship (2014–2015)'],
+  [2014, 'award', 'ISIF Asia Award: "Shohoj Sonchoy — Easy Savings"'],
+  [2014, 'talk', 'ICUIMC 2014, Siem Reap, Cambodia'],
+  [2015, 'grant', 'ICT Ministry Innovation Fund: Project "SWAPNO" (2015–2016)'],
+  [2019, 'talk', 'IEEE ICCCS 2019, Singapore'],
+  [2022, 'award', 'Best Poster Award, CS Graduate Research Day, Stony Brook'],
+  [2024, 'grant', 'NSF BIAS-NRT Research Traineeship Fellowship'],
+  [2025, 'talk', 'CHI 2025, Yokohama: Personalized Public Messaging'],
+  [2025, 'talk', 'IEEE VIS 2025, Vienna: Charts-of-Thought'],
+  [2025, 'talk', 'IEEE VIS 2025, Vienna: MisVisFix'],
+  [2025, 'talk', 'Guest lecture on MisVisFix, SUNY Old Westbury'],
+  [2025, 'award', 'Outstanding Review recognition, IUI 2026'],
+  [2026, 'award', 'Outstanding Review recognition, CHI 2026'],
+  [2026, 'talk', 'Innocence Network Conference 2026, Chicago (NSF BIAS-NRT)'],
+].map(([y, cat, label]) => ({ date: new Date(y, 0, 1), cat, label }));
+VZ.dotTimeline(document.getElementById('awards-timeline'), {
+  events: AW_EVENTS, cats: AW_CATS, unit: 'year', from: new Date(2014, 0, 1), to: new Date(2026, 0, 1), label: 'Awards and talks timeline'
+});
+VZ.legend(document.getElementById('awards-legend'), Object.values(AW_CATS));
+VZ.heatmap(document.getElementById('review-heatmap'), {
+  rows: ['CHI', 'IUI', 'CSCW', 'IEEE VIS'], cols: ['2025', '2026'], color: '#0891B2',
+  cells: {
+    'CHI|2025': { v: 1, tip: 'Papers and Case Studies reviewer' },
+    'CHI|2026': { v: 2, note: '🏅', tip: 'Papers reviewer · Special Recognition for Outstanding Reviews' },
+    'IUI|2025': { v: 1, tip: 'Papers reviewer' },
+    'IUI|2026': { v: 2, note: '🏅', tip: 'Papers reviewer · Special Recognition for Outstanding Reviews' },
+    'CSCW|2025': { v: 1, tip: 'Papers reviewer' },
+    'CSCW|2026': { v: 1, tip: 'Papers reviewer' },
+    'IEEE VIS|2025': { v: 1, tip: 'Papers reviewer' },
+  },
+  label: 'Reviewing heatmap'
+});
+</script>
 </body></html>
